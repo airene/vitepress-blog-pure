@@ -1,0 +1,141 @@
+/*keep the change things*/
+:root {
+    --c-divider-light: #e2e8f0;
+    --c-divider-dark: rgba(84, 84, 88, 0.48);
+
+    --c-brand: #1d4ed8; /*  don't forget change the --tag-bg for tags */
+    --c-brand-light: #1d4ed8;
+
+    --font-family-base: PingFangSC-regular, Microsoft Yahei, sans-serif;
+    --font-family-mono: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+    --header-height: 3.6rem;
+    --code-inline-bg-color: #52525b;
+    --code-bg-color: #52525b;
+
+    /* pure theme color */
+    --li-dot-color: #737373;
+    --title-color: #334155;
+    --date-color: #64748b;
+    --date-font-family: Georgia, sans-serif;
+    --tag-bg: #eff6ff;
+}
+
+/*theme reset*/
+a:link {
+    text-decoration: none;
+}
+h1 {
+    font-size: 1.7rem;
+}
+h2 {
+    font-size: 1.125rem;
+    margin-bottom: inherit;
+}
+h3 {
+    font-size: 1rem;
+}
+.container {
+    max-width: 58rem !important;
+}
+/* pc + mobile start */
+.sidebar-links {
+    padding: 0.5rem 0;
+}
+.sidebar > .sidebar-links > .sidebar-link + .sidebar-link {
+    padding-top: 0;
+}
+.sidebar > .sidebar-links > .sidebar-link > .sidebar-link-item {
+    font-size: 0.875rem;
+    padding: 0.1rem 0 0.1rem 1.2rem;
+}
+.sidebar > .sidebar-links > .sidebar-link > .sidebar-links > .sidebar-link > .sidebar-link-item {
+    font-size: 0.875rem;
+    padding: 0.2rem 1.5rem 0.2rem 2rem;
+}
+/* pc + mobile end */
+
+/*tags and archives page style*/
+.article {
+    padding: 4px 0 4px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title-o {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 4px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--li-dot-color);
+}
+.title {
+    color: var(--title-color);
+    font-size: 1rem;
+}
+.title:hover {
+    color: var(--c-brand);
+}
+.date {
+    color: var(--date-color);
+    font-family: var(--date-font-family);
+}
+/*mobile*/
+@media screen and (max-width: 720px) {
+    h1 {
+        font-size: 1.25rem;
+    }
+    .container {
+        padding: 0 1.3rem !important;
+    }
+    .article {
+        padding: 4px;
+    }
+    .title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 17em;
+    }
+}
+/*pc -  adjust the header and sidebar's position */
+@media screen and (min-width: 720px) {
+    :root {
+        --header-height: 5rem !important;
+    }
+    .nav-bar-title {
+        font-size: 2rem !important;
+        padding-left: 180px;
+        letter-spacing: -1px;
+        font-weight: 500 !important;
+        font-family: Optima, sans-serif !important;
+    }
+
+    .nav-links {
+        padding-right: 180px !important;
+    }
+    .nav-link .item {
+        font-weight: 600;
+    }
+
+    .page {
+        margin-left: 0 !important;
+    }
+
+    .sidebar {
+        left: auto !important;
+        right: 1rem !important;
+        border-right: none !important;
+        padding-top: 4rem !important;
+        width: 14rem !important;
+    }
+    .sidebar > .sidebar-links {
+        border-left: 1px solid var(--c-divider-light);
+    }
+    .sidebar-link-item {
+        border-left-width: 1px;
+        margin-left: -1px;
+    }
+}
