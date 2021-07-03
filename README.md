@@ -1,23 +1,21 @@
 # vitepress theme blog pure
 [Live Demo](https://fangying.dev)
 ### 动机
-一直想找一个架构足够干净的ssg系统，hexo,hugo,vuepress等各种网上能找的都试了，包括这些系统的主题也没有直接满意的，（功能太多，生成的html的文件还有不少插件的残留等）
-刚好vitepress出来时间不长，系统干净，博客主题这块又是空白，所以做一个自己满意的系统吧，要求就是功能可以少，要足够的轻量
-对比博客系统的话，其实当前的功能更像是网上笔记更恰当，比如访问量，加广告，留言，分页功能暂时都没有
+一直想找一个架构足够干净的ssg程序，hexo,hugo,vuepress等各种网上能找的都试了，总有不满意的地方，包括这些程序的主题也没有直接满意的。（功能太多，生成的html的文件还有不少插件的残留等）
+刚好vitepress出来时间不长，系统干净，博客主题这块又是空白，所以做一个自己满意的博客主题吧，诉求就是功能可以少，但要足够的轻量。  
+认真来说对比博客程序的话，其实当前的功能更像是在线笔记。  
+**计划中的功能**  
+[] 留言  
+[] 分页
 
-### 基础
-从掘金看到的一篇文章 [link](https://juejin.cn/post/6896382276389732359)  
-他的项目 [vitepress-blog](https://github.com/Moking1997/vitepress-blog)
-
-'Moking1997' 开发的比较早，vitepress的版本还是0.7.x,现在已经 0.15.x了，变化还是挺大的，已经不太能通过提pr的方式维护了。  
-主要的变化是适配vitepress的新版本，主题这块采用的实现思路不一样，为了实现极少的代码量和将来能发布成npm包的可能性，并不动官方默认主题。
-
-比如：  
-sidebar使用hackcss的方式实现想要的效果  
+**不打算维护的功能**  
+搜索 - 博客不像文档，站内搜索价值不大  
+广告 - 一般用不上  
+上一篇｜下一篇 - 博客本来没什么关联性，价值不大
 
 ### 使用方法
 
-**貌似目前主题机制还不成熟，也没到正式版本，先用copy的方式使用**
+**貌似目前vitepress主题机制还不成熟，可能是因为没到正式版，先用copy的方式使用**
 
 1.复制一下文件到你的项目根目录
 ```
@@ -31,8 +29,7 @@ sidebar使用hackcss的方式实现想要的效果
 ├── public           //[可选]    
     └── favicon.ico  
 ```
-2.新建一个package.json文件,执行 npm i,其中内容自己看着调整
-
+2.新建一个package.json文件,执行 npm i,包信息自己看着调整
 ```json
 {
     "name": "vitepress-blog-pure",
@@ -53,26 +50,37 @@ sidebar使用hackcss的方式实现想要的效果
         "gray-matter": "^4.0.3",
         "mz": "^2.7.0"
     }
-}  
+}
 ```
+3.执行 npm run dev 即可查看效果, 其他工具随意pnpm,yarn等
 
-3. 执行 npm run dev即可查看效果, 其他工具随意pnpm,yarn等
-
-**4. (注意)写文章的格式**
+**ps. 写文章的格式和位置**  
+推荐放到posts目录中，格式：
 ```markdown
 ---
 date: 2021-06-30
-title: .zsh_history 历史记录优化
+title: .zsh_history历史记录优化
+description: 历史重复的命令太多了，不用grep都不太好找
 tags:
 - macOS
-description: 历史重复的命令太多了，不用grep都不太好找，好在可以用shell把相同的去掉
 ---
-#正文
+#标题
+正文
 ```
-**其中 date和title为必须有的内容，其他随意**
+**其中title为必须有的内容，其他随意，推荐含有date,不然会默认一个当前时间，推荐含有tags，这样也可以在标签页面显示**
+
+
+### 感谢
+其实没怎么写过nodejs,从掘金看到的一篇文章带来的灵感 - [VitePress极简博客搭建](https://juejin.cn/post/6896382276389732359)
+
+[Moking1997](https://github.com/Moking1997) 开发的比较早，vitepress的版本还是0.7.x,现在已经0.15.x了，变化还是挺大的，已经不太能通过提pr的方式维护了。  
+主要的变化是适配vitepress的新版本，主题这块采用的实现思路不一样，并不改动官方默认主题，这样可以实现极少的代码量和为将来能发布成npm主题包的做准备。
+
+比如：  
+sidebar使用hackcss的方式实现想要的效果
+
 
 ## License
 
-[MIT](https://opensource.org/licenses/MIT)
-
+[MIT](https://opensource.org/licenses/MIT)  
 Copyright (c) 2021-present, Airene
