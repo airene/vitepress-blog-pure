@@ -5,3 +5,5 @@ dist-ssr
 *.local
 .idea
 pnpm-lock.yaml
+smartmontools.md
+zsh_history.md

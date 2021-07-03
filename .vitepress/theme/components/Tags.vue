@@ -19,7 +19,7 @@ import { useData } from 'vitepress'
 import { initTags } from '../functions'
 
 const { theme } = useData()
-const data = computed(() => initTags(theme.value.pages))
+const data = computed(() => initTags(theme.value.posts))
 let selectTag = ref('')
 const toggleTag = (tag: string) => {
     selectTag.value = tag

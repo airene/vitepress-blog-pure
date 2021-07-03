@@ -8,7 +8,7 @@ import './custom.css'
 
 export default {
     ...DefaultTheme,
-    enhanceApp({ app, router, siteData }) {
+    enhanceApp({ app }) {
         // 注册组件
         app.component('Tags', Tags)
         app.component('Archives', Archives)

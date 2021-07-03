@@ -20,7 +20,7 @@
 import { computed } from 'vue'
 import { useData } from 'vitepress'
 const { theme } = useData()
-const posts = computed(() => theme.value.pages)
+const posts = computed(() => theme.value.posts)
 </script>
 
 <style scoped>

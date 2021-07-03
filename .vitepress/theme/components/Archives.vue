@@ -21,7 +21,7 @@ import { computed } from 'vue'
 import { useYearSort } from '../functions'
 
 const { theme } = useData()
-const data = computed(() => useYearSort(theme.value.pages))
+const data = computed(() => useYearSort(theme.value.posts))
 </script>
 
 <style scoped>
