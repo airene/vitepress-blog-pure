@@ -2,7 +2,7 @@ const fs = require('mz/fs')
 const globby = require('globby')
 const matter = require('gray-matter')
 
-function _convertDate(date) {
+function _convertDate(date = new Date().toString()) {
     const json_date = new Date(date).toJSON()
     return json_date.split('T')[0]
 }
