@@ -18,11 +18,11 @@ description: vitepress的markdown插件支持的语法，一直想找一个干�
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
-* 安装 node ，有brew的情况下， 就是 brew info node 一句话就行了
+* 安装 node ，有brew的情况下， 就是 `brew info node` 一句话就行了
 ```bash
 brew info node
 ```
-* 安装 vitepress 本文重点 前两个都有都情况下 一句话就行了 npm install -g vitepress
+* 安装 vitepress 本文重点 前两个都有都情况下 一句话就行了 `npm install -g vitepress`
  ```bash
 npm install -g vitepress
 ```
