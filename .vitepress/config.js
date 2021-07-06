@@ -12,7 +12,8 @@ async function config() {
                 { text: 'About', link: '/pages/about' }
                 // { text: 'Airene', link: 'http://airene.net' }  -- External link test
             ]
-        }
+        },
+        srcExclude: ['README.md'] // exclude the README.md , needn't to compiler
     }
 }
 

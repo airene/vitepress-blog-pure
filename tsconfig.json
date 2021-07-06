@@ -9,7 +9,7 @@
         "resolveJsonModule": true,
         "esModuleInterop": true,
         "skipLibCheck": true,
-        "lib": ["esnext", "dom"],
+        "lib": ["ESNext","DOM"],
         "types": [],
         "baseUrl": "./",
         "paths": {
