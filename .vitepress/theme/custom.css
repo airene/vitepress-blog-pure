@@ -64,7 +64,7 @@ h3 {
 .title-o {
     display: inline-block;
     margin-right: 10px;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
     width: 4px;
     height: 4px;
     border-radius: 50%;
@@ -83,6 +83,12 @@ h3 {
 }
 /*mobile*/
 @media screen and (max-width: 720px) {
+    .sidebar-button {
+        left:0.5rem
+    }
+    .page {
+        min-height: calc(100vh - 3rem);
+    }
     h1 {
         font-size: 1.25rem;
     }
@@ -91,6 +97,9 @@ h3 {
     }
     .article {
         padding: 4px;
+    }
+    .title-o {
+        margin-right: 4px;
     }
     .title {
         overflow: hidden;

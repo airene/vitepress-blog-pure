@@ -1,19 +1,18 @@
 <template>
-    <div style="padding: 0 1.2rem">
-        <div v-for="(article, index) in posts" :key="index" class="list">
-            <div class="list-header">
-                <div class="list-li">
-                    <a :href="article.regularPath"> {{ article.frontMatter.title }}</a>
-                </div>
-                <time datetime="2020-10-25" class="date">
-                    {{ article.frontMatter.date }}
-                </time>
+    <div v-for="(article, index) in posts" :key="index" class="list">
+        <div class="list-header">
+            <div class="list-li">
+                <a :href="article.regularPath"> {{ article.frontMatter.title }}</a>
             </div>
-            <p class="describe">
-                {{ article.frontMatter.description }}
-            </p>
+            <time datetime="2020-10-25" class="date">
+                {{ article.frontMatter.date }}
+            </time>
         </div>
+        <p class="describe">
+            {{ article.frontMatter.description }}
+        </p>
     </div>
+
     <div class="pagination">
         <a
             class="link"
@@ -70,7 +69,7 @@ const props = defineProps({
     width: 28px;
     height: 28px;
     text-align: center;
-    line-height: 24px;
+    line-height: 28px;
     border: 1px var(--c-divider-light) solid;
     border-right: none;
 }
