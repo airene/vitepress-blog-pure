@@ -15,7 +15,6 @@
         "@types/node": "^15.14.1",
         "@typescript-eslint/eslint-plugin": "^4.28.2",
         "@typescript-eslint/parser": "^4.28.2",
-        "@vssue/api-github-v3": "^1.4.7",
         "@vue/compiler-sfc": "^3.1.4",
         "eslint": "^7.30.0",
         "eslint-config-prettier": "^8.3.0",
@@ -26,7 +25,6 @@
         "gray-matter": "^4.0.3",
         "prettier": "^2.3.2",
         "typescript": "^4.3.5",
-        "vitepress": "^0.15.6",
-        "vssue": "^1.4.8"
+        "vitepress": "^0.15.6"
     }
 }

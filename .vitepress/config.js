@@ -8,6 +8,7 @@ async function config() {
         themeConfig: {
             posts: await getPosts(),
             pageSize: pageSize,
+            website: 'https://github.com/airene/vitepress-blog-pure',
             nav: [
                 { text: 'Home', link: '/' },
                 { text: 'Archives', link: '/pages/archives' },

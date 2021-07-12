@@ -121,6 +121,7 @@ h3 {
 
     .page {
         margin-left: 0 !important;
+        min-height: calc(100vh - 5rem);
     }
 
     .sidebar {
