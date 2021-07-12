@@ -7,3 +7,4 @@ dist-ssr
 pnpm-lock.yaml
 smartmontools.md
 zsh_history.md
+/*.md

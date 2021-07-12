@@ -14,13 +14,25 @@
             </p>
         </div>
     </div>
+    <div class="pagination">
+        <a
+            class="link"
+            :class="{ active: pageCurrent === i }"
+            v-for="i in pagesNum"
+            :key="i"
+            :href="i === 1 ? '/index.html' : `/page_${i}.html`"
+            >{{ i }}</a
+        >
+    </div>
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue'
 import { useData } from 'vitepress'
-const { theme } = useData()
-const posts = computed(() => theme.value.posts)
+const props = defineProps({
+    posts: Array,
+    pageCurrent: Number,
+    pagesNum: Number
+})
 </script>
 
 <style scoped>
@@ -47,6 +59,34 @@ const posts = computed(() => theme.value.posts)
     overflow: hidden;
     color: #71717a;
     margin: 0.625rem 0 1rem;
+}
+.pagination {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+}
+.link {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    line-height: 24px;
+    border: 1px var(--c-divider-light) solid;
+    border-right: none;
+}
+.link.active {
+    background: var(--c-brand);
+    color: #fff;
+    border: 1px solid var(--c-brand) !important;
+}
+.link:first-child {
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+}
+.link:last-child {
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+    border-right: 1px var(--c-divider-light) solid;
 }
 
 @media screen and (max-width: 720px) {
