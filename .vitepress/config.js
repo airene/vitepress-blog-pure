@@ -1,6 +1,7 @@
 const { getPosts, generatePaginationPages } = require('./theme/serverUtils')
+
 async function config() {
-    const pageSize = 10
+    const pageSize = 2
     await generatePaginationPages(pageSize)
     return {
         title: 'vitepress-blog',
@@ -8,7 +9,12 @@ async function config() {
         themeConfig: {
             posts: await getPosts(),
             pageSize: pageSize,
-            website: 'https://github.com/airene/vitepress-blog-pure',
+            website: 'https://github.com/airene/vitepress-blog-pure', //copyright link
+            comment: {
+                repo: 'airene/vitepress-blog-pure',
+                themes: 'github-light',
+                issueTerm: 'pathname'
+            },
             nav: [
                 { text: 'Home', link: '/' },
                 { text: 'Archives', link: '/pages/archives' },
@@ -18,12 +24,14 @@ async function config() {
             ]
         },
         srcExclude: ['README.md'] // exclude the README.md , needn't to compiler
-        /*vite: {
+        /*
+        vite: {
             build: { minify: false }
         },
         optimizeDeps: {
             keepNames: true
-        }*/
+        }
+        */
     }
 }
 
