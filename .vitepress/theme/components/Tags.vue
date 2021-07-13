@@ -5,7 +5,7 @@
         </span>
     </div>
     <div class="header">{{ selectTag }}</div>
-    <a :href="article.regularPath" v-for="(article, index) in data[selectTag]" :key="index" class="article">
+    <a :href="withBase(article.regularPath)" v-for="(article, index) in data[selectTag]" :key="index" class="article">
         <div class="title">
             <div class="title-o"></div>
             {{ article.frontMatter.title }}
@@ -15,7 +15,7 @@
 </template>
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
-import { useData } from 'vitepress'
+import { useData,withBase } from 'vitepress'
 import { initTags } from '../functions'
 
 const { theme } = useData()

@@ -2,7 +2,7 @@
     <div v-for="(article, index) in posts" :key="index" class="list">
         <div class="list-header">
             <div class="list-li">
-                <a :href="article.regularPath"> {{ article.frontMatter.title }}</a>
+                <a :href="withBase(article.regularPath)"> {{ article.frontMatter.title }}</a>
             </div>
             <time datetime="2020-10-25" class="date">
                 {{ article.frontMatter.date }}
@@ -19,14 +19,14 @@
             :class="{ active: pageCurrent === i }"
             v-for="i in pagesNum"
             :key="i"
-            :href="i === 1 ? '/index.html' : `/page_${i}.html`"
+            :href="withBase(i === 1 ? '/index.html' : `/page_${i}.html`)"
             >{{ i }}</a
         >
     </div>
 </template>
 
 <script lang="ts" setup>
-import { useData } from 'vitepress'
+import { withBase } from 'vitepress'
 const props = defineProps({
     posts: Array,
     pageCurrent: Number,
