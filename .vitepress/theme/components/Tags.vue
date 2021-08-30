@@ -1,7 +1,7 @@
 <template>
     <div class="tags">
         <span @click="toggleTag(key)" v-for="(item, key) in data" class="tag">
-            {{ key }}
+            {{ key }} <strong>{{data[key].length}}</strong>
         </span>
     </div>
     <div class="header">{{ selectTag }}</div>
@@ -44,6 +44,7 @@ const toggleTag = (tag: string) => {
     color: var(--c-brand);
     cursor: pointer;
 }
+.tag strong {color:#222}
 .header {
     font-size: 2rem;
     font-weight: 600;
