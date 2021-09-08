@@ -148,3 +148,7 @@ h3 {
         margin-left: -1px;
     }
 }
+/* TODO if the offical version merge my commit ,can change it */
+[class*='language-'] code{
+    background: transparent;
+}
