@@ -45,19 +45,20 @@ const props = defineProps({
     justify-content: space-between;
 }
 .list-li {
-    font-size: 1.25rem;
-    font-weight: 400;
+    font-size: 1.0625rem;
+    font-weight: 500;
     margin: 0.1rem 0;
 }
 
 .describe {
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
     overflow: hidden;
     color: #71717a;
     margin: 0.625rem 0 1rem;
+    line-height: 1.5rem;
 }
 .pagination {
     margin-top: 16px;

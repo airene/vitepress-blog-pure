@@ -3,10 +3,10 @@
     --c-divider-light: #e2e8f0;
     --c-divider-dark: rgba(84, 84, 88, 0.48);
 
-    --c-brand: #1d4ed8; /*  don't forget change the --tag-bg for tags */
-    --c-brand-light: #1d4ed8;
+    --c-brand: #333; /*  don't forget change the --tag-bg for tags */
+    --c-brand-light: #333;
 
-    --font-family-base: PingFangSC-regular, 'Microsoft Yahei', sans-serif;
+    --font-family-base: 'PingFang SC', 'Microsoft Yahei', sans-serif;
     --font-family-mono: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 
     --header-height: 3.6rem;
@@ -26,9 +26,11 @@ a:link {
 }
 h1 {
     font-size: 1.7rem;
+    font-weight: 500;
 }
 h2 {
-    font-size: 1.125rem;
+    font-size: 1.0625rem;
+    font-weight: 500;
     margin-bottom: inherit;
 }
 h3 {
@@ -72,7 +74,7 @@ h3 {
 }
 .title {
     color: var(--title-color);
-    font-size: 1rem;
+    font-size: 0.9375rem;
 }
 .title:hover {
     color: var(--c-brand);
