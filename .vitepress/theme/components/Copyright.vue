@@ -20,7 +20,7 @@ const webTitle = site.value.title
     height: 50px;
     text-align: center;
     font-size: 0.75rem;
-    width: 100vw;
+    width: 100%;
 }
 .vitepress {
     color: #222;

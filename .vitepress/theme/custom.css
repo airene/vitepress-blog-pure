@@ -150,4 +150,9 @@ h3 {
         margin-left: -1px;
     }
 }
-
+/* hide sidebar when width is too small*/
+@media screen and (min-width: 720px) and (max-width: 1380px) {
+    .sidebar {
+        display: none;
+    }
+}
