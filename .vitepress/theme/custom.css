@@ -24,6 +24,13 @@
 a:link {
     text-decoration: none;
 }
+.content a[rel~=noopener]:link,a[rel~=noopener]:visited{
+    color: #06f;
+    border-bottom: 1px solid #06f;
+}
+.content a[rel~=noopener]:hover {
+    color:#000;
+}
 h1 {
     font-size: 1.7rem;
     font-weight: 500;
