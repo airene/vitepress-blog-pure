@@ -11,6 +11,7 @@ async function config() {
             posts: await getPosts(),
             pageSize: pageSize,
             website: 'https://github.com/airene/vitepress-blog-pure', //copyright link
+            // 评论的仓库地址
             comment: {
                 repo: 'airene/vitepress-blog-pure',
                 themes: 'github-light',

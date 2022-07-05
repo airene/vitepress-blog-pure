@@ -76,6 +76,18 @@ tags:
 
 使用方式是在想开评论的文章最后加一个 `<Comment />`
 
+`.vitepress/config.js` 这个文件中的comment部分换成自己的仓库,才能正确的保存评论
+
+```js
+...
+comment: {
+    repo: 'airene/vitepress-blog-pure', //你自己的用户名和仓库名
+    themes: 'github-light',
+    issueTerm: 'pathname'
+}
+...
+```
+
 ## 感谢
 其实没怎么写过nodejs,从掘金看到的一篇文章带来的灵感 - [VitePress极简博客搭建](https://juejin.cn/post/6896382276389732359)
 
