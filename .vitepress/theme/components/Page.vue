@@ -4,7 +4,7 @@
             <div class="list-li">
                 <a :href="withBase(article.regularPath)"> {{ article.frontMatter.title }}</a>
             </div>
-            <time datetime="2020-10-25" class="date">
+            <time class="date">
                 {{ article.frontMatter.date }}
             </time>
         </div>
