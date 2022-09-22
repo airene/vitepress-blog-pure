@@ -1,12 +1,14 @@
 const { getPosts, generatePaginationPages } = require('./theme/serverUtils')
 
 async function config() {
-    const pageSize = 2
+    const pageSize = 3
     await generatePaginationPages(pageSize)
     return {
+
         title: 'vitepress-blog',
         base:'/',
         description: 'vitepress,blog,blog-theme',
+        ignoreDeadLinks:true,
         themeConfig: {
             posts: await getPosts(),
             pageSize: pageSize,
@@ -23,17 +25,22 @@ async function config() {
                 { text: 'Tags', link: '/pages/tags' },
                 { text: 'About', link: '/pages/about' }
                 // { text: 'Airene', link: 'http://airene.net' }  -- External link test
-            ]
+            ],
+            //outline:[2,3],
+            outlineTitle:'文章摘要',
+            socialLinks:[{ icon: 'github', link: 'https://github.com/airene/vitepress-blog-pure' }],
         },
-        srcExclude: ['README.md'] // exclude the README.md , needn't to compiler
-        /*
+        srcExclude: ['README.md'], // exclude the README.md , needn't to compiler
+
         vite: {
-            build: { minify: false }
+            //build: { minify: false }
+            server: { port: 5000 },
         },
-        optimizeDeps: {
-            keepNames: true
-        }
-        */
+        /*
+      optimizeDeps: {
+          keepNames: true
+      }
+      */
     }
 }
 

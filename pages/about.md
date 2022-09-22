@@ -2,7 +2,7 @@
 page: true
 title: About
 description: About me test
-sidebar: false
+aside: false
 ---
 # about me
 coming soon...

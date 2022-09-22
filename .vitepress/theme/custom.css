@@ -1,67 +1,119 @@
-/*keep the change things*/
 :root {
-    --c-divider-light: #e2e8f0;
-    --c-divider-dark: rgba(84, 84, 88, 0.48);
+    --vp-c-green: #227bff;
+    --vp-c-green-light: #1b76ff;
+    --vp-c-green-lighter: #227bff;
+    --vp-c-green-dark: #005be3;
+    --vp-c-green-darker: #0045ac;
+    --vp-c-green-dimm-1: rgba(39, 112, 222, 0.5);
+    --vp-c-green-dimm-2: rgba(39, 112, 222, 0.25);
+    --vp-c-green-dimm-3: rgba(39, 112, 222, 0.05);
 
-    --c-brand: #333; /*  don't forget change the --tag-bg for tags */
-    --c-brand-light: #333;
+    --vp-font-family-base: 'PingFang SC', 'Microsoft Yahei', sans-serif;
+    --vp-font-family-mono: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 
-    --font-family-base: 'PingFang SC', 'Microsoft Yahei', sans-serif;
-    --font-family-mono: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-
-    --header-height: 3.6rem;
-    --code-bg-color: #52525b;
+    /*--vp-code-bg-color: #52525b;*/
 
     /* pure theme color */
     --li-dot-color: #737373;
-    --title-color: #334155;
-    --date-color: #64748b;
+    --date-color: var(--vp-c-indigo-soft);
     --date-font-family: Georgia, sans-serif;
-    --tag-bg: #eff6ff;
 }
 
-/*theme reset*/
-a:link {
-    text-decoration: none;
+/* theme reset start */
+/* for copyright */
+.Layout {
+    min-height: calc(100vh - 59px) !important;
 }
-.content a[rel~=noopener]:link,a[rel~=noopener]:visited{
-    color: #06f;
-    border-bottom: 1px solid #06f;
+.vp-doc a {
+    color:var(--vp-c-text-1);
+    font-weight: 400;
 }
-.content a[rel~=noopener]:hover {
-    color:#000;
+.title {
+    color: var(--vp-c-text-1);
+    font-size: 1.8rem !important;
+    letter-spacing: -1px;
+    font-weight: 500 !important;
+    font-family: Optima, sans-serif !important;
+}
+
+.content a[rel~=noreferrer]:link, a[rel~=noreferrer]:visited{
+    color: var(--vp-c-brand);
+    font-weight: 400 !important;
+    border-bottom: 1px solid var(--vp-c-brand);
+}
+.content a[rel~=noreferrer]:hover {
+    color:#888;
 }
 h1 {
-    font-size: 1.7rem;
-    font-weight: 500;
+    font-size: 1.7rem !important;
+    font-weight: 500 !important;
 }
 h2 {
-    font-size: 1.0625rem;
-    font-weight: 500;
-    margin-bottom: inherit;
+    font-size: 1.0625rem !important;
+    font-weight: 500 !important;
+    border-bottom: 1px solid var(--vp-c-divider-light);
+    border-top:none !important;
+    margin:inherit !important;
 }
-h3 {
-    font-size: 1rem;
+/* for aside start */
+.aside {
+    position: fixed !important;
+    right:24px;
+}
+.VPDoc {
+    padding-top: 10px !important;
 }
 .container {
     max-width: 58rem !important;
 }
-/* pc + mobile start */
-.sidebar-links {
-    padding: 0.5rem 0;
+.VPContent .container {
+    max-width: 58rem !important;
+    display: block !important;
+    position: relative;
 }
-.sidebar > .sidebar-links > .sidebar-link + .sidebar-link {
-    padding-top: 0;
+.VPDoc.has-aside .content-container {
+    max-width: 1800px !important;
 }
-.sidebar > .sidebar-links > .sidebar-link > .sidebar-link-item {
-    font-size: 0.875rem;
-    padding: 0.1rem 0 0.1rem 1.2rem;
+
+/* when witdh less 1440 hide the aside*/
+@media(min-width:1280px) {
+    .VPDoc .aside {
+        display: none !important;
+    }
 }
-.sidebar > .sidebar-links > .sidebar-link > .sidebar-links > .sidebar-link > .sidebar-link-item {
-    font-size: 0.875rem;
-    padding: 0.2rem 1.5rem 0.2rem 2rem;
+@media(min-width:1440px) {
+    .VPDoc:not(.has-sidebar) .content {
+        max-width: inherit !important;
+    }
+    .VPDoc .aside {
+       display: block !important;
+    }
 }
-/* pc + mobile end */
+@media (min-width: 768px) {
+    .VPDoc {
+        padding-top: 10px !important;
+    }
+}
+@media (min-width: 960px) {
+    .VPNavBar .container {
+        //border-bottom: 1px solid var(--vp-c-divider-light) !important;
+    }
+    .content {
+        padding: 0 !important;
+    }
+    .VPDoc:not(.has-sidebar) .content {
+        max-width: inherit !important;
+    }
+    .VPDocAsideOutline .content {
+        padding-left: 14px !important;
+    }
+    .VPDoc {
+        padding-top: 10px !important;
+    }
+
+}
+/* for aside end */
+/* theme reset end */
 
 /*tags and archives page style*/
 .article {
@@ -79,87 +131,36 @@ h3 {
     border-radius: 50%;
     background-color: var(--li-dot-color);
 }
-.title {
-    color: var(--title-color);
+
+.titleDiv {
+    color: var(--vp-c-text-1);
     font-size: 0.9375rem;
 }
-.title:hover {
-    color: var(--c-brand);
+.titleDiv:hover {
+    color: var(--vp-c-brand);
 }
 .date {
     color: var(--date-color);
     font-family: var(--date-font-family);
 }
+
 /*mobile*/
 @media screen and (max-width: 720px) {
-    .sidebar-button {
-        left:0.5rem
+
+    .vp-doc h1 {
+        font-size: 1.25rem !important;
     }
-    .page {
-        min-height: calc(100vh - 3rem);
-    }
-    h1 {
-        font-size: 1.25rem;
-    }
-    .container {
-        padding: 0 1.3rem !important;
-    }
+
     .article {
         padding: 4px;
     }
     .title-o {
         margin-right: 4px;
     }
-    .title {
+    .titleDiv {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
         width: 17em;
-    }
-}
-/*pc -  adjust the header and sidebar's position */
-@media screen and (min-width: 720px) {
-    :root {
-        --header-height: 5rem !important;
-    }
-    .nav-bar-title {
-        font-size: 2rem !important;
-        padding-left: 180px;
-        letter-spacing: -1px;
-        font-weight: 500 !important;
-        font-family: Optima, sans-serif !important;
-    }
-
-    .nav-links {
-        padding-right: 180px !important;
-    }
-    .nav-link .item {
-        font-weight: 600;
-    }
-
-    .page {
-        margin-left: 0 !important;
-        min-height: calc(100vh - 5rem);
-    }
-
-    .sidebar {
-        left: auto !important;
-        right: 1rem !important;
-        border-right: none !important;
-        padding-top: 4rem !important;
-        width: 14rem !important;
-    }
-    .sidebar > .sidebar-links {
-        border-left: 1px solid var(--c-divider-light);
-    }
-    .sidebar-link-item {
-        border-left-width: 1px;
-        margin-left: -1px;
-    }
-}
-/* hide sidebar when width is too small*/
-@media screen and (min-width: 720px) and (max-width: 1380px) {
-    .sidebar {
-        display: none;
     }
 }

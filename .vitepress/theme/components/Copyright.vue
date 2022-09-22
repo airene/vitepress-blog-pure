@@ -3,7 +3,7 @@
         MIT Licensed | Copyright © 2021-2022 <a class="vitepress" :href="website">{{ webTitle }}</a
         ><br />
         Powered by
-        <a class="vitepress" target="_blank" href="//vitepress.vuejs.org/">VitePress</a>
+        <a class="vitepress" target="_blank" href="//vitepress.vuejs.org/">VitePress - 1.0.0-alpha.15</a>
     </div>
 </template>
 <script lang="ts" setup>
@@ -16,14 +16,14 @@ const webTitle = site.value.title
 
 <style>
 .site-footer {
-    color: #999;
+    color: #888;
     height: 50px;
     text-align: center;
     font-size: 0.75rem;
     width: 100%;
 }
 .vitepress {
-    color: #222;
+    color: var(--vp-c-text-1);
     font-weight: 700;
 }
 </style>
