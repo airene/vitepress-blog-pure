@@ -29,5 +29,6 @@ const data = computed(() => useYearSort(theme.value.posts))
     padding: 16px 0 8px 0;
     font-size: 1.2rem;
     font-weight: 600;
+    font-family: var(--date-font-family);
 }
 </style>

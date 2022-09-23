@@ -1,7 +1,7 @@
 :root {
-    --vp-c-green: #227bff;
+    --vp-c-green: #2563eb;
     --vp-c-green-light: #1b76ff;
-    --vp-c-green-lighter: #227bff;
+    --vp-c-green-lighter: #2563eb;
     --vp-c-green-dark: #005be3;
     --vp-c-green-darker: #0045ac;
     --vp-c-green-dimm-1: rgba(39, 112, 222, 0.5);
@@ -9,30 +9,29 @@
     --vp-c-green-dimm-3: rgba(39, 112, 222, 0.05);
 
     --vp-font-family-base: 'PingFang SC', 'Microsoft Yahei', sans-serif;
-    --vp-font-family-mono: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 
     /*--vp-code-bg-color: #52525b;*/
 
     /* pure theme color */
-    --li-dot-color: #737373;
-    --date-color: var(--vp-c-indigo-soft);
+    --li-dot-color: var(--vp-c-brand);
+    --date-color: var(--vp-c-text-2);
     --date-font-family: Georgia, sans-serif;
 }
 
 /* theme reset start */
 /* for copyright */
 .Layout {
-    min-height: calc(100vh - 59px) !important;
+    min-height: calc(100vh - 78px) !important;
 }
 .vp-doc a {
     color:var(--vp-c-text-1);
-    font-weight: 400;
+    font-weight: 500;
 }
 .title {
     color: var(--vp-c-text-1);
     font-size: 1.8rem !important;
     letter-spacing: -1px;
-    font-weight: 500 !important;
+    font-weight: 600 !important;
     font-family: Optima, sans-serif !important;
 }
 
@@ -45,15 +44,21 @@
     color:#888;
 }
 h1 {
-    font-size: 1.7rem !important;
+    font-size: 1.625rem !important;
     font-weight: 500 !important;
+    padding-top: 20px;
 }
 h2 {
-    font-size: 1.0625rem !important;
+    font-size: 1.25rem !important;
     font-weight: 500 !important;
     border-bottom: 1px solid var(--vp-c-divider-light);
     border-top:none !important;
+    padding: 4px 0;
     margin:inherit !important;
+}
+h3 {
+    font-size: 1rem !important;
+    font-weight: 500 !important;
 }
 /* for aside start */
 .aside {
@@ -61,13 +66,13 @@ h2 {
     right:24px;
 }
 .VPDoc {
-    padding-top: 10px !important;
+    padding-top: 32px !important;
 }
 .container {
-    max-width: 58rem !important;
+    max-width: 50rem !important;
 }
 .VPContent .container {
-    max-width: 58rem !important;
+    max-width: 50rem !important;
     display: block !important;
     position: relative;
 }
@@ -133,7 +138,7 @@ h2 {
 }
 
 .titleDiv {
-    color: var(--vp-c-text-1);
+    color: var(--vp-c-text-2);
     font-size: 0.9375rem;
 }
 .titleDiv:hover {
@@ -146,7 +151,9 @@ h2 {
 
 /*mobile*/
 @media screen and (max-width: 720px) {
-
+    .VPDoc {
+        padding-bottom: 20px !important;
+    }
     .vp-doc h1 {
         font-size: 1.25rem !important;
     }

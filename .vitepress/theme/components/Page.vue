@@ -35,7 +35,7 @@ const props = defineProps({
 
 <style scoped>
 .list {
-    border-bottom: 1px dashed var(--vp-c-divider);
+    border-bottom: 1px dashed var(--vp-c-divider-light);
     padding: 1rem 0 0 0;
 }
 .list-header {
@@ -50,7 +50,7 @@ const props = defineProps({
 }
 
 .describe {
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
@@ -75,7 +75,7 @@ const props = defineProps({
 }
 .link.active {
     background: var(--vp-c-text-1);
-    color: #fff;
+    color: var(--vp-c-text-inverse-1);
     border: 1px solid var(--vp-c-text-1) !important;
 }
 .link:first-child {
@@ -98,7 +98,7 @@ const props = defineProps({
         justify-content: space-between;
     }
     .list-li {
-        font-size: 1.125rem;
+        font-size: 1.0625rem;
         font-weight: 400;
         display: -webkit-box;
         -webkit-box-orient: vertical;

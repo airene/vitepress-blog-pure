@@ -41,10 +41,10 @@ const toggleTag = (tag: string) => {
     background-color: var(--vp-c-bg-soft);
     transition: 0.4s;
     border-radius: 3px;
-    color: var(--vp-c-brand);
+    color: var(--vp-c-text-1);
     cursor: pointer;
 }
-.tag strong {color:var(--vp-c-text-1)}
+.tag strong {color:var(--vp-c-brand)}
 .header {
     font-size: 2rem;
     font-weight: 600;

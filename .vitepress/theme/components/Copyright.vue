@@ -17,10 +17,11 @@ const webTitle = site.value.title
 <style>
 .site-footer {
     color: #888;
-    height: 50px;
     text-align: center;
     font-size: 0.75rem;
     width: 100%;
+    padding: 15px 0;
+    overflow: auto;
 }
 .vitepress {
     color: var(--vp-c-text-1);
