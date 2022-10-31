@@ -101,7 +101,7 @@ h3 {
 }
 @media (min-width: 960px) {
     .VPNavBar .container {
-        //border-bottom: 1px solid var(--vp-c-divider-light) !important;
+        /*//border-bottom: 1px solid var(--vp-c-divider-light) !important;*/
     }
     .content {
         padding: 0 !important;
