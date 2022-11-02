@@ -32,7 +32,8 @@
     font-size: 1.8rem !important;
     letter-spacing: -1px;
     font-weight: 600 !important;
-    font-family: Luminari, sans-serif !important;
+    text-transform: uppercase;
+    font-family: var(--date-font-family);
 }
 
 .content a[rel~=noreferrer]:link, a[rel~=noreferrer]:visited{

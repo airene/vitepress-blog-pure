@@ -1,5 +1,5 @@
 # vitepress theme blog pure
-[Live Demo](https://xining.me)
+[Live Demo](https://ti.bi)
 ## 动机
 一直想找一个架构足够干净的ssg程序，hexo,hugo,vuepress,docsify等各种网上能找的都试了，总有不满意的地方，包括这些程序的主题也没有直接满意的（编程语言不会，功能太多，生成的html的文件还有不少插件的残留等）。
 
