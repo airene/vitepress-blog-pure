@@ -7,8 +7,8 @@ vitepress足够轻量，系统干净，博客主题这块又是空白，所以�
 
 认真来说对比博客程序的话，其实当前的功能更像是线上笔记展示。  
 
-## 2022-09-18 更新
-适配到1.0.0-alpha.15
+## 2022-11-06 更新
+适配到1.0.0-alpha.26
 
 
 **计划中的功能** 
@@ -52,10 +52,10 @@ vitepress足够轻量，系统干净，博客主题这块又是空白，所以�
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "vitepress": "^0.20.4.6",
-        "globby": "^11.0.4",
+        "vitepress": "^1.0.0-alpha.26",
+        "globby": "^11.1.0",
         "gray-matter": "^4.0.3",
-        "fs-extra": "^10.0.0"
+        "fs-extra": "^10.1.0"
     }
 }
 ```
@@ -71,26 +71,24 @@ description: 历史重复的命令太多了，不用grep都不太好找
 tags:
 - macOS
 ---
-#标题
+#{{ $frontmatter.title }}
 正文
 ```
 **其中title为必须有的内容，其他随意，推荐含有date,不然会默认一个当前时间，推荐含有tags，这样也可以在标签页面显示**
 
 ## 评论
-目前评论的使用方式并不是很优，尝试了几种方式，基于现状也找不到更合适的方式了，这个也可能和vitepress的宗旨（并不是vuepress的下一代）或者还没到正式版优关系
+目前评论的使用方式并不是很优，尝试了几种方式，基于现状也找不到更合适的方式了，这个也可能和vitepress的宗旨（并不是vuepress的下一代）或者还没到正式版有关系
 
 使用方式是在想开评论的文章最后加一个 `<Comment />`
 
 `.vitepress/config.js` 这个文件中的comment部分换成自己的仓库,才能正确的保存评论
 
 ```js
-...
 comment: {
     repo: 'airene/vitepress-blog-pure', //你自己的用户名和仓库名
     themes: 'github-light',
     issueTerm: 'pathname'
 }
-...
 ```
 
 ## 感谢

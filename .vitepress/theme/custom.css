@@ -30,7 +30,7 @@
 .title {
     color: var(--vp-c-text-1);
     font-size: 1.8rem !important;
-    letter-spacing: -1px;
+    letter-spacing: 1px;
     font-weight: 600 !important;
     text-transform: uppercase;
     font-family: var(--date-font-family);
