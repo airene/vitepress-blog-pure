@@ -10,6 +10,13 @@ vitepress 足够轻量，系统干净，博客主题这块又是空白，所以�
 
 认真来说对比博客程序的话，其实当前的功能更像是线上笔记展示。
 
+## 2022-12-31 更新
+适配到 1.0.0-alpha.33
+终于把globby 升级到了大版本13，从12开始globby转到了esm，一直没升级，而且概念有点模糊，这次升一下。 现在js语法就更纯粹没有commonjs了
+**最近还会做主题升级，现在的总感觉不满意，有点不是简约，是纯简单了**
+### brack change 
+- package.json 文件需要增加一行 "type": "module",
+- globby版本大于 12最好按照文档中的经过验证的
 ## 2022-11-06 更新
 
 适配到 1.0.0-alpha.26
@@ -58,10 +65,11 @@ vitepress 足够轻量，系统干净，博客主题这块又是空白，所以�
     },
     "keywords": [],
     "author": "",
+    "type": "module",
     "license": "ISC",
     "devDependencies": {
         "vitepress": "^1.0.0-alpha.33",
-        "globby": "^11.1.0",
+        "globby": "^13.1.3",
         "gray-matter": "^4.0.3",
         "fs-extra": "^11.1.0"
     }
