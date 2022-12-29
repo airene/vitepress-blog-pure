@@ -14,7 +14,7 @@ vitepress 足够轻量，系统干净，博客主题这块又是空白，所以�
 适配到 1.0.0-alpha.33
 终于把globby 升级到了大版本13，从12开始globby转到了esm，一直没升级，而且概念有点模糊，这次升一下。 现在js语法就更纯粹没有commonjs了
 **最近还会做主题升级，现在的总感觉不满意，有点不是简约，是纯简单了**
-### brack change 
+### break change 
 - package.json 文件需要增加一行 "type": "module",
 - globby版本大于 12最好按照文档中的经过验证的
 ## 2022-11-06 更新
