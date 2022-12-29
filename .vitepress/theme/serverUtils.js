@@ -1,9 +1,7 @@
-const globby = require('globby')
-const matter = require('gray-matter')
-const fs = require('fs-extra')
-const path = require('path')
-
-module.exports = { getPosts, generatePaginationPages }
+import { globby } from 'globby'
+import matter from 'gray-matter'
+import fs from 'fs-extra'
+import { resolve } from 'path'
 
 async function getPosts() {
     let paths = await getPostMDFilePaths()
@@ -30,7 +28,7 @@ async function generatePaginationPages(pageSize) {
     let pagesNum = allPagesLength % pageSize === 0 ? allPagesLength / pageSize : allPagesLength / pageSize + 1
     pagesNum = parseInt(pagesNum.toString())
 
-    const paths = path.resolve('./')
+    const paths = resolve('./')
     if (allPagesLength > 0) {
         for (let i = 1; i < pagesNum + 1; i++) {
             const page = `
@@ -72,3 +70,4 @@ async function getPostMDFilePaths() {
     })
     return paths.filter((item) => item.includes('posts/'))
 }
+export { getPosts, generatePaginationPages }

@@ -9,13 +9,19 @@
         "resolveJsonModule": true,
         "esModuleInterop": true,
         "skipLibCheck": true,
-        "lib": ["ESNext","DOM"],
+        "lib": ["ESNext", "DOM"],
         "types": [],
         "baseUrl": "./",
         "paths": {
             "@/*": ["src/*"]
         }
     },
-    "include": [".vitepress/**/*.ts", ".vitepress/**/*.d.ts", ".vitepress/**/*.tsx", ".vitepress/**/*.vue","shims-vue.d.ts"],
+    "include": [
+        ".vitepress/**/*.ts",
+        ".vitepress/**/*.d.ts",
+        ".vitepress/**/*.tsx",
+        ".vitepress/**/*.vue",
+        "shims-vue.d.ts"
+    ],
     "exclude": ["dist", "node_modules"]
 }

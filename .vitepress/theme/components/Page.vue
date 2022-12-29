@@ -8,8 +8,7 @@
                 {{ article.frontMatter.date }}
             </time>
         </div>
-        <p class="describe" v-html="article.frontMatter.description">
-        </p>
+        <p class="describe" v-html="article.frontMatter.description"></p>
     </div>
 
     <div class="pagination">
@@ -19,8 +18,7 @@
             v-for="i in pagesNum"
             :key="i"
             :href="withBase(i === 1 ? '/index.html' : `/page_${i}.html`)"
-            >{{ i }}</a
-        >
+        >{{ i }}</a>
     </div>
 </template>
 

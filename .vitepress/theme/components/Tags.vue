@@ -1,7 +1,7 @@
 <template>
     <div class="tags">
         <span @click="toggleTag(key)" v-for="(item, key) in data" class="tag">
-            {{ key }} <strong>{{data[key].length}}</strong>
+            {{ key }} <strong>{{ data[key].length }}</strong>
         </span>
     </div>
     <div class="header">{{ selectTag }}</div>
@@ -15,7 +15,7 @@
 </template>
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
-import { useData,withBase } from 'vitepress'
+import { useData, withBase } from 'vitepress'
 import { initTags } from '../functions'
 
 const { theme } = useData()
@@ -44,7 +44,9 @@ const toggleTag = (tag: string) => {
     color: var(--vp-c-text-1);
     cursor: pointer;
 }
-.tag strong {color:var(--vp-c-brand)}
+.tag strong {
+    color: var(--vp-c-brand);
+}
 .header {
     font-size: 2rem;
     font-weight: 600;

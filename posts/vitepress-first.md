@@ -27,7 +27,7 @@ brew info node
 npm install -g vitepress
 ```
 
-到你的md目录执行 vitepress dev . 就能查看文档大致的样子 ,通常是这样的地址 <a href="http://localhost:3000" target="_blank" rel="noreferrer">http://localhost:3000</a>
+到你的md目录执行 vitepress dev . 就能查看文档大致的样子
 
 ## vitepress-markdown 特性
 
