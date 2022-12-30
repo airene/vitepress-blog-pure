@@ -1,16 +1,17 @@
 import { defineConfig } from 'vitepress'
+import { getPosts } from './theme/serverUtils'
 
-import { getPosts, generatePaginationPages } from './theme/serverUtils'
-const pageSize = 3
-await generatePaginationPages(pageSize)
+//每页的文章数量
+const pageSize = 2
+
 export default defineConfig({
     title: 'vitepress-blog',
     base: '/',
+    cacheDir: './node_modules/vitepress_cache',
     description: 'vitepress,blog,blog-theme',
     ignoreDeadLinks: true,
     themeConfig: {
-        posts: await getPosts(),
-        pageSize: pageSize,
+        posts: await getPosts(pageSize),
         website: 'https://github.com/airene/vitepress-blog-pure', //copyright link
         // 评论的仓库地址
         comment: {

@@ -3,8 +3,12 @@ import matter from 'gray-matter'
 import fs from 'fs-extra'
 import { resolve } from 'path'
 
-async function getPosts() {
-    let paths = await getPostMDFilePaths()
+async function getPosts(pageSize) {
+    let paths = await globby(['posts/**.md'])
+
+    //生成分页页面markdown
+    await generatePaginationPages(paths.length, pageSize)
+
     let posts = await Promise.all(
         paths.map(async (item) => {
             const content = await fs.readFile(item, 'utf-8')
@@ -20,29 +24,22 @@ async function getPosts() {
     return posts
 }
 
-async function generatePaginationPages(pageSize) {
-    // getPostMDFilePath return type is object not array
-    let allPagesLength = [...(await getPostMDFilePaths())].length
-
+async function generatePaginationPages(total, pageSize) {
     //  pagesNum
-    let pagesNum = allPagesLength % pageSize === 0 ? allPagesLength / pageSize : allPagesLength / pageSize + 1
-    pagesNum = parseInt(pagesNum.toString())
-
+    let pagesNum = total % pageSize === 0 ? total / pageSize : parseInt(total / pageSize) + 1
     const paths = resolve('./')
-    if (allPagesLength > 0) {
+    if (total > 0) {
         for (let i = 1; i < pagesNum + 1; i++) {
             const page = `
 ---
 page: true
-date: 2021-06-30
 title: ${i === 1 ? 'home' : 'page_' + i}
-sidebar: false
+aside: false
 ---
 <script setup>
 import Page from "./.vitepress/theme/components/Page.vue";
 import { useData } from "vitepress";
 const { theme } = useData();
-const pageSize = theme.value.pageSize;
 const posts = theme.value.posts.slice(${pageSize * (i - 1)},${pageSize * i})
 </script>
 <Page :posts="posts" :pageCurrent="${i}" :pagesNum="${pagesNum}" />
@@ -64,10 +61,4 @@ function _compareDate(obj1, obj2) {
     return obj1.frontMatter.date < obj2.frontMatter.date ? 1 : -1
 }
 
-async function getPostMDFilePaths() {
-    let paths = await globby(['**.md'], {
-        ignoreFiles: ['node_modules', 'README.md']
-    })
-    return paths.filter((item) => item.includes('posts/'))
-}
-export { getPosts, generatePaginationPages }
+export { getPosts }
