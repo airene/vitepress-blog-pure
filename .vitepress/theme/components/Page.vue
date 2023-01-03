@@ -98,7 +98,7 @@ const props = defineProps({
 
 @media screen and (max-width: 768px) {
     .post-list {
-        padding: 1rem 0 0 0;
+        padding: 14px 0 14px 0;
     }
     .post-header {
         display: flex;

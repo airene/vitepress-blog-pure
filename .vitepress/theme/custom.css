@@ -129,17 +129,17 @@ h3 {
     .vp-doc h1 {
         font-size: 1.25rem !important;
     }
-    .article {
+    .posts {
         padding: 4px;
     }
-    .title-o {
+    .post-dot {
         margin-right: 4px;
     }
-    .titleDiv {
+    .post-container {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        width: 17em;
+        width: 16.5em;
     }
 }
 
