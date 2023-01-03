@@ -3,9 +3,9 @@
         <div class="year">
             {{ yearList[0].frontMatter.date.split('-')[0] }}
         </div>
-        <a :href="withBase(article.regularPath)" v-for="(article, index) in yearList" :key="index" class="article">
-            <div class="titleDiv">
-                <div class="title-o"></div>
+        <a :href="withBase(article.regularPath)" v-for="(article, index) in yearList" :key="index" class="posts">
+            <div class="post-container">
+                <div class="post-dot"></div>
                 {{ article.frontMatter.title }}
             </div>
             <div class="date">{{ article.frontMatter.date.slice(5) }}</div>
@@ -24,9 +24,9 @@ const data = computed(() => useYearSort(theme.value.posts))
 
 <style scoped>
 .year {
-    padding: 16px 0 8px 0;
-    font-size: 1.2rem;
-    font-weight: 600;
+    padding: 14px 0 8px 0;
+    font-size: 1.25rem;
+    font-weight: 500;
     font-family: var(--date-font-family);
 }
 </style>

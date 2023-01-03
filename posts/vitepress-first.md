@@ -29,7 +29,7 @@ npm install -g vitepress
 
 到你的md目录执行 vitepress dev . 就能查看文档大致的样子
 
-## vitepress-markdown 特性
+## vitepress-markdown 特性vitepress-markdown 特性
 
 ### 表格
 | Tables        | Are           | Cool  |

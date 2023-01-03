@@ -1,10 +1,10 @@
 :root {
 
-    --vp-c-brand: #2563eb;
-    --vp-c-brand-light: #1b76ff;
-    --vp-c-brand-lighter: #1b76ff;
-    --vp-c-brand-dark: #005be3;
-    --vp-c-brand-darker: #0045ac;
+    --vp-c-brand: #2563eb !important;
+    --vp-c-brand-light: var(--vp-c-brand);
+    --vp-c-brand-lighter: var(--vp-c-brand);
+    --vp-c-brand-dark: var(--vp-c-brand);
+    --vp-c-brand-darker: var(--vp-c-brand);
 
     --vp-font-family-base: 'PingFang SC', 'Microsoft Yahei', sans-serif;
 
@@ -13,20 +13,27 @@
     --date-color: var(--vp-c-text-2);
     --date-font-family: Georgia, sans-serif;
 }
+.dark {
+    --vp-c-brand: #3b82f6;
+}
+
 
 /* theme reset start */
 
 .Layout {
     min-height: calc(100vh - 78px) !important; /* reduce copyright */
 }
-/* post title link*/
+
 .vp-doc a {
     color: var(--vp-c-text-1);
     font-weight: 500;
 }
+.vp-doc p {
+    font-size: 0.9375rem;
+}
 .title {
     color: var(--vp-c-text-1);
-    font-size: 1.8rem !important;
+    font-size: 1.5rem !important;
     letter-spacing: 1px;
     font-weight: 600 !important;
     text-transform: uppercase;
@@ -42,12 +49,12 @@
     color: #888;
 }
 h1 {
-    font-size: 1.625rem !important;
+    font-size: 1.5rem !important;
     font-weight: 500 !important;
-    padding-top: 20px;
+    padding-top: 14px;
 }
 h2 {
-    font-size: 1.25rem !important;
+    font-size: 1.125rem !important;
     font-weight: 500 !important;
     border-bottom: 1px solid var(--vp-c-divider-light);
     border-top: none !important;
@@ -75,16 +82,28 @@ h3 {
 }
 /* content maxWidth*/
 .VPDoc.has-aside .content-container {
-    max-width: 1800px !important;
+    max-width: 60rem !important;
 }
 
 
-@media (min-width: 1440px) {
+@media (min-width: 768px) {
+    .VPDoc {
+        padding-top: 10px !important;
+    }
+}
+@media (min-width: 960px) {
+    .VPDoc {
+        padding-top: 10px !important;
+    }
+
     .VPDoc:not(.has-sidebar) .content {
         max-width: inherit !important;
     }
-    .VPDoc .aside {
-        display: block !important;
+    .VPDocAsideOutline .content {
+        padding-left: 14px !important;
+    }
+    .content {
+        padding: 0 !important;
     }
 }
 /* when witdh less 1440 hide the aside 小于1440就到下一挡*/
@@ -93,56 +112,13 @@ h3 {
         display: none !important;
     }
 }
-@media (min-width: 960px) {
-    .content {
-        padding: 0 !important;
-    }
-    .VPDoc:not(.has-sidebar) .content {
-        max-width: inherit !important;
-    }
-    .VPDocAsideOutline .content {
-        padding-left: 14px !important;
-    }
-    .VPDoc {
-        padding-top: 10px !important;
-    }
-}
-@media (min-width: 768px) {
-    .VPDoc {
-        padding-top: 10px !important;
-    }
-}
-/* for aside end */
-/* theme reset end */
 
-/*tags and archives page style*/
-.article {
-    padding: 4px 0 4px 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.title-o {
-    display: inline-block;
-    margin-right: 10px;
-    margin-bottom: 3px;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background-color: var(--li-dot-color);
+@media (min-width: 1440px) {
+    .VPDoc .aside {
+        display: block !important;
+    }
 }
 
-.titleDiv {
-    color: var(--vp-c-text-2);
-    font-size: 0.9375rem;
-}
-.titleDiv:hover {
-    color: var(--vp-c-brand);
-}
-.date {
-    color: var(--date-color);
-    font-family: var(--date-font-family);
-}
 
 /*mobile*/
 @media screen and (max-width: 768px) {
@@ -166,3 +142,38 @@ h3 {
         width: 17em;
     }
 }
+
+/* for aside end */
+/* theme reset end */
+
+/*tags and archives page style*/
+.posts {
+    padding: 4px 0 4px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.post-dot {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 3px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--li-dot-color);
+}
+
+.post-container {
+    color: var(--vp-c-text-2);
+    font-size: 0.9375rem;
+    font-weight: 400;
+}
+.post-container:hover {
+    color: var(--vp-c-brand);
+}
+.date {
+    color: var(--date-color);
+    font-family: var(--date-font-family);
+}
+
+
