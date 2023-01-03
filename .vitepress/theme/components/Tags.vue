@@ -17,10 +17,11 @@
 import { computed, ref } from 'vue'
 import { useData, withBase } from 'vitepress'
 import { initTags } from '../functions'
-
+let url = location.href.split('?')[1]
+let params = new URLSearchParams(url)
 const { theme } = useData()
 const data = computed(() => initTags(theme.value.posts))
-let selectTag = ref('')
+let selectTag = ref(params.get('tag') ? params.get('tag') : '')
 const toggleTag = (tag: string) => {
     selectTag.value = tag
 }

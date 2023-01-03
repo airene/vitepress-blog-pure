@@ -24,7 +24,7 @@ vitepress 足够轻量，系统干净，博客主题这块又是空白，所以�
 
 
 ## 2022-12-31 更新
-适配到 1.0.0-alpha.33
+适配到 1.0.0-alpha.34
 终于把globby升级到了大版本13，从12开始globby转到了esm，一直没升级，而且概念有点模糊，这次升一下。 现在js语法就更纯粹没有commonjs了
 **最近还会做主题升级，现在的总感觉不满意，有点不是简约，是纯简单了**
 ### break change
@@ -67,7 +67,7 @@ vitepress 足够轻量，系统干净，博客主题这块又是空白，所以�
     "type": "module",
     "license": "ISC",
     "devDependencies": {
-        "vitepress": "^1.0.0-alpha.33",
+        "vitepress": "^1.0.0-alpha.34",
         "globby": "^13.1.3",
         "gray-matter": "^4.0.3",
         "fs-extra": "^11.1.0"
