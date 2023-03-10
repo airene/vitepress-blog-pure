@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 import { getPosts } from './theme/serverUtils'
 
 //每页的文章数量
-const pageSize = 2
+const pageSize = 10
 
 export default defineConfig({
     title: 'vitepress',

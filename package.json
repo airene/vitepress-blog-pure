@@ -27,6 +27,6 @@
         "gray-matter": "^4.0.3",
         "prettier": "^2.8.4",
         "typescript": "^4.9.5",
-        "vitepress": "1.0.0-alpha.50"
+        "vitepress": "1.0.0-alpha.51"
     }
 }
