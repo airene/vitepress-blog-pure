@@ -22,7 +22,8 @@ vitepress 足够轻量，系统干净，博客主题这块又是空白，所以�
 -   广告 - 一般人用不上
 -   上一篇｜下一篇 - 博客文章本来没什么关联性，价值不大
 
-
+## 2023-03-10 更新
+动态配置评论(utterances)的主题
 ## 2022-12-31 更新
 适配到 1.0.0-alpha.34
 终于把globby升级到了大版本13，从12开始globby转到了esm，一直没升级，而且概念有点模糊，这次升一下。 现在js语法就更纯粹没有commonjs了
@@ -67,10 +68,10 @@ vitepress 足够轻量，系统干净，博客主题这块又是空白，所以�
     "type": "module",
     "license": "ISC",
     "devDependencies": {
-        "vitepress": "^1.0.0-alpha.51",
-        "globby": "^13.1.3",
+        "vitepress": "^1.0.0-alpha.75",
+        "globby": "^13.1.4",
         "gray-matter": "^4.0.3",
-        "fs-extra": "^11.1.0"
+        "fs-extra": "^11.1.1"
     }
 }
 ```
