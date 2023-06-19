@@ -68,8 +68,8 @@ vitepress 足够轻量，系统干净，博客主题这块又是空白，所以�
     "type": "module",
     "license": "ISC",
     "devDependencies": {
-        "vitepress": "^1.0.0-alpha.75",
-        "globby": "^13.1.4",
+        "vitepress": "^1.0.0-beta.2",
+        "globby": "^13.2.0",
         "gray-matter": "^4.0.3",
         "fs-extra": "^11.1.1"
     }
