@@ -21,7 +21,8 @@ vitepress 足够轻量，系统干净，博客主题这块又是空白，所以�
 -   搜索 - 博客不像文档，站内搜索价值不大
 -   广告 - 一般人用不上
 -   上一篇｜下一篇 - 博客文章本来没什么关联性，价值不大
-
+## 2023-07-24 更新
+`# {{ $frontmatter.title }}`用这样的方式当模版会有本地搜索的问题(显示的还是这个tag)，如果用本地搜索，建议直接和title保持一致的内容
 ## 2023-03-10 更新
 动态配置评论(utterances)的主题
 ## 2022-12-31 更新
@@ -68,7 +69,7 @@ vitepress 足够轻量，系统干净，博客主题这块又是空白，所以�
     "type": "module",
     "license": "ISC",
     "devDependencies": {
-        "vitepress": "^1.0.0-beta.2",
+        "vitepress": "^1.0.0-beta.6",
         "globby": "^13.2.0",
         "gray-matter": "^4.0.3",
         "fs-extra": "^11.1.1"
@@ -90,9 +91,11 @@ tags:
     - macOS
 ---
 
-#{{ $frontmatter.title }}
+# {{ $frontmatter.title }}
 正文
 ```
+
+
 
 **其中 title 为必须有的内容，其他随意，推荐含有 date,不然会默认一个当前时间，推荐含有 tags，这样也可以在标签页面显示**
 
