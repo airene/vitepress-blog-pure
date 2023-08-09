@@ -26,7 +26,9 @@ export default defineConfig({
             { text: 'About', link: '/pages/about' }
             // { text: 'Airene', link: 'http://airene.net' }  -- External link test
         ],
-
+        search: {
+            provider: 'local',
+        },
         //outline:[2,3],
         outlineTitle: '文章摘要',
         socialLinks: [{ icon: 'github', link: 'https://github.com/airene/vitepress-blog-pure' }]
