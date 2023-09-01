@@ -27,6 +27,7 @@
 .vp-doc a {
     color: var(--vp-c-text-1);
     font-weight: 500;
+    text-decoration: none;
 }
 .vp-doc p {
     font-size: 0.9375rem;
