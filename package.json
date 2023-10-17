@@ -13,20 +13,20 @@
     "license": "ISC",
     "type": "module",
     "devDependencies": {
-        "@types/node": "^20.5.7",
-        "@typescript-eslint/eslint-plugin": "^6.5.0",
-        "@typescript-eslint/parser": "^6.5.0",
-        "@typescript-eslint/types": "^6.5.0",
+        "@types/node": "^20.8.6",
+        "@typescript-eslint/eslint-plugin": "^6.8.0",
+        "@typescript-eslint/parser": "^6.8.0",
+        "@typescript-eslint/types": "^6.8.0",
         "@vue/compiler-sfc": "^3.3.4",
-        "eslint": "^8.48.0",
+        "eslint": "^8.51.0",
         "eslint-config-prettier": "^9.0.0",
-        "eslint-plugin-prettier": "^5.0.0",
+        "eslint-plugin-prettier": "^5.0.1",
         "eslint-plugin-vue": "^9.17.0",
         "fs-extra": "^11.1.1",
         "globby": "^13.2.2",
         "gray-matter": "^4.0.3",
         "prettier": "^3.0.3",
         "typescript": "^5.2.2",
-        "vitepress": "1.0.0-rc.10"
+        "vitepress": "1.0.0-rc.22"
     }
 }
