@@ -46,18 +46,7 @@ const props = defineProps({
     font-weight: 500;
     margin: 0.1rem 0;
 }
-.post-info {
-    font-size: 12px;
-}
-.post-info span {
-    display: inline-block;
-    padding: 0 8px;
-    background-color: var(--vp-c-bg-alt);
-    margin-right: 10px;
-    transition: 0.4s;
-    border-radius: 2px;
-    color: var(--vp-c-text-1);
-}
+
 .describe {
     font-size: 0.9375rem;
     display: -webkit-box;
