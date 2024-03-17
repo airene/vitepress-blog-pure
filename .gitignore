@@ -11,3 +11,5 @@ zsh_history.md
 /package-lock.json
 origin_theme.css
 .vitepress/cache
+
+**/dist.tar.gz

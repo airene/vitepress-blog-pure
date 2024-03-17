@@ -28,5 +28,9 @@
     "prettier": "^3.2.5",
     "typescript": "^5.4.2",
     "vitepress": "^1.0.0-rc.45"
+  },
+  "dependencies": {
+    "markdown-it-mathjax3": "^4.3.2",
+    "unocss": "^0.58.6"
   }
 }
