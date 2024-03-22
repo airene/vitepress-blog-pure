@@ -8,7 +8,7 @@ hero:
     name: VitePress Blog Pure
     tagline: 一款轻薄简单的博客站点模板
     image:
-        src: /images/img.png
+        src: /favicon.ico
     actions:
         - theme: brand
           text: 快速开始

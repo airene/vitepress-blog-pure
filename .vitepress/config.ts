@@ -23,7 +23,7 @@ export default defineConfig({
             }
         }
     },
-    title: 'VitePress Blog Pure',
+    title: 'VitePress Pure',
     base: '/',
     srcDir: './src',
     cacheDir: './node_modules/vitepress_cache',

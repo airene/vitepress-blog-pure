@@ -13,3 +13,4 @@ origin_theme.css
 .vitepress/cache
 
 **/dist.tar.gz
+**/pages/page*.md

@@ -1,8 +1,9 @@
 ---
 page: true
-title: home
+title: Home
 aside: false
 ---
+
 <script setup>
 import Page from "../../.vitepress/theme/components/Page.vue";
 import { useData } from "vitepress";
