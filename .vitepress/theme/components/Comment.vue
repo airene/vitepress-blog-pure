@@ -5,9 +5,9 @@ const utterancesRef = ref()
 const { theme, isDark } = useData()
 onMounted(() => {
     nextTick(() => {
-        let { repo, issueTerm = 'pathname' } = theme.value.comment
+        const { repo, issueTerm = 'pathname' } = theme.value.comment
         if (repo) {
-            let utterances = document.createElement('script')
+            const utterances = document.createElement('script')
             utterances.async = true
             utterances.setAttribute('src', 'https://utteranc.es/client.js')
             utterances.setAttribute('repo', repo)
@@ -18,7 +18,9 @@ onMounted(() => {
         }
         //hack method to change utterances theme when change site theme
         watch(isDark, (newVal, oldVal) => {
-            if (newVal !== oldVal) location.replace(location.href)
+            if (window != undefined && newVal !== oldVal) {
+                window.location.replace(window.location.href)
+            }
         })
     })
 })

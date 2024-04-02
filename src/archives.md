@@ -1,7 +1,7 @@
 ---
 page: true
-title: Archive
-description: Archive
+title: Archives
+description: Archives
 aside: false
 ---
 

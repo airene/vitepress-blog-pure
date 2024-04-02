@@ -4,7 +4,7 @@
             {{ yearList[0].frontMatter.date.split('-')[0] }}
         </div>
         <a :href="withBase(article.regularPath)" v-for="(article, index) in yearList" :key="index" class="posts">
-            <div class="post-container">
+            <div class="post-container .dark:text-slate-100 text-slate-800 font-bold">
                 <div class="post-dot"></div>
                 {{ article.frontMatter.title }}
             </div>
@@ -16,7 +16,7 @@
 <script lang="ts" setup>
 import { useData, withBase } from 'vitepress'
 import { computed } from 'vue'
-import { useYearSort } from '../functions'
+import { useYearSort } from '../utils'
 
 const { theme } = useData()
 const data = computed(() => useYearSort(theme.value.posts))

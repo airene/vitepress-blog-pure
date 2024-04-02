@@ -1,46 +1,86 @@
 <template>
     <div v-for="(article, index) in posts" :key="index" class="post-list">
-        <div class="post-header">
+        <div class="post-header -mt-1">
             <div class="post-title">
                 <a :href="withBase(article.regularPath)"> {{ article.frontMatter.title }}</a>
             </div>
         </div>
-        <p class="describe" v-html="article.frontMatter.description"></p>
-        <div class='post-info'>
-            {{ article.frontMatter.date }} <span v-for="item in article.frontMatter.tags"><a :href="withBase(`/pages/tags.html?tag=${item}`)"> {{ item }}</a></span>
+        <p
+            v-if="article.frontMatter.description"
+            class="describe indent-8"
+            v-html="article.frontMatter.description"
+        ></p>
+        <div v-else class="mt-4"></div>
+        <div class="post-info">
+            <span class="mr-2">
+                <img :src="timePng" class="time-img" />
+                <span class="mt-2"> {{ article.frontMatter.date }}</span>
+            </span>
+            <span
+                v-for="item in article.frontMatter.tags"
+                class="hover:.dark:bg-blue-500 hover:.dark:text-slate-800 hover:bg-blue-200 tag rounded-full hover:font-extrabold"
+            >
+                <a :href="withBase(`/tags.html?tag=${item}`)"> {{ item }}</a>
+            </span>
         </div>
     </div>
 
     <div class="pagination">
         <a
-            class="link"
+            class="link ml-1"
             :class="{ active: pageCurrent === i }"
             v-for="i in pagesNum"
             :key="i"
-            :href="withBase(i === 1 ? '/index.html' : `/page_${i}.html`)"
-        >{{ i }}</a>
+            :href="withBase(i === 1 ? '/pages/index.html' : `/pages/page_${i}.html`)"
+            >{{ i }}</a
+        >
     </div>
 </template>
 
 <script lang="ts" setup>
 import { withBase } from 'vitepress'
+import { PropType } from 'vue'
+
+import timePng from '../assets/icon/time.png'
+
+interface Article {
+    regularPath: string
+    frontMatter: {
+        title: string
+        description: string
+        date: string
+        tags: string[]
+    }
+}
+
 const props = defineProps({
-    posts: Array,
-    pageCurrent: Number,
-    pagesNum: Number
+    posts: {
+        type: Array as PropType<Article[]>,
+        required: true
+    },
+    pageCurrent: {
+        type: Number as PropType<number>,
+        required: true
+    },
+    pagesNum: {
+        type: Number as PropType<number>,
+        required: true
+    }
 })
 </script>
 
 <style scoped>
 .post-list {
-    border-bottom: 1px dashed var(--vp-c-divider-light);
-    padding: 14px 0 14px 0;
+    border-bottom: 1px solid rgba(78, 145, 200, 0.586);
+    padding: 24px 0 14px 0;
 }
+
 .post-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 .post-title {
     font-size: 1.125rem;
     font-weight: 500;
@@ -57,11 +97,13 @@ const props = defineProps({
     margin: 10px 0;
     line-height: 1.5rem;
 }
+
 .pagination {
-    margin-top: 16px;
+    margin-top: 24px;
     display: flex;
     justify-content: center;
 }
+
 .link {
     display: inline-block;
     width: 24px;
@@ -69,20 +111,18 @@ const props = defineProps({
     border: 1px var(--vp-c-divider-light) solid;
     border-right: none;
     font-weight: 400;
+    border-radius: 25%;
 }
+
 .link.active {
     background: var(--vp-c-text-1);
     color: var(--vp-c-neutral-inverse);
-    border: 1px solid var(--vp-c-text-1) !important;
+    background-color: var(--vp-c-brand);
 }
-.link:first-child {
-    border-bottom-left-radius: 2px;
-    border-top-left-radius: 2px;
-}
-.link:last-child {
-    border-bottom-right-radius: 2px;
-    border-top-right-radius: 2px;
-    border-right: 1px var(--vp-c-divider-light) solid;
+
+.dark .link.active {
+    color: var(--vp-c-neutral-inverse);
+    font-weight: bolder;
 }
 
 @media screen and (max-width: 768px) {
