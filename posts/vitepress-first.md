@@ -1,6 +1,7 @@
 ---
 date: 2021-06-30
 title: 一直想找一个系统架构和设计都足够干净的系统
+category: 主题
 tags:
 - vitepress
 - markdown
