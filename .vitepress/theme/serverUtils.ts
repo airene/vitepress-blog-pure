@@ -3,7 +3,7 @@ import matter from 'gray-matter'
 import fs from 'fs-extra'
 import { resolve } from 'path'
 
-async function getPosts(pageSize) {
+async function getPosts(pageSize: number) {
     let paths = await globby(['posts/**.md'])
 
     //生成分页页面markdown
@@ -20,13 +20,13 @@ async function getPosts(pageSize) {
             }
         })
     )
-    posts.sort(_compareDate)
+    posts.sort(_compareDate as any)
     return posts
 }
 
-async function generatePaginationPages(total, pageSize) {
+async function generatePaginationPages(total: number, pageSize: number) {
     //  pagesNum
-    let pagesNum = total % pageSize === 0 ? total / pageSize : parseInt(total / pageSize) + 1
+    let pagesNum = total % pageSize === 0 ? total / pageSize : Math.floor(total / pageSize) + 1
     const paths = resolve('./')
     if (total > 0) {
         for (let i = 1; i < pagesNum + 1; i++) {
@@ -57,7 +57,7 @@ function _convertDate(date = new Date().toString()) {
     return json_date.split('T')[0]
 }
 
-function _compareDate(obj1, obj2) {
+function _compareDate(obj1: { frontMatter: { date: number } }, obj2: { frontMatter: { date: number } }) {
     return obj1.frontMatter.date < obj2.frontMatter.date ? 1 : -1
 }
 

@@ -1,5 +1,5 @@
 import DefaultTheme from 'vitepress/theme'
-
+import type { Theme } from 'vitepress'
 import NewLayout from './components/NewLayout.vue'
 import Archives from './components/Archives.vue'
 import Category from './components/Category.vue'
@@ -20,4 +20,4 @@ export default {
         app.component('Page', Page)
         app.component('Comment', Comment)
     }
-}
+} satisfies Theme

@@ -66,7 +66,7 @@ bump version
     "name": "vitepress-blog-pure",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "index.ts",
     "scripts": {
         "dev": "vitepress dev --host 0.0.0.0",
         "build": "vitepress build",
@@ -113,7 +113,7 @@ tags:
 
 使用方式是在想开评论的文章最后加一个 `<Comment />`
 
-`.vitepress/config.js` 这个文件中的 comment 部分换成自己的仓库信息,才能正确的保存评论
+`.vitepress/config.ts` 这个文件中的 comment 部分换成自己的仓库信息,才能正确的保存评论
 
 ```js
 comment: {

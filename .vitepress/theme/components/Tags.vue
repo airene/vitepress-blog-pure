@@ -1,11 +1,16 @@
 <template>
     <div class="tags">
-        <span @click="toggleTag(key)" v-for="(item, key) in data" class="tag">
+        <span @click="toggleTag(String(key))" v-for="(_, key) in data" class="tag">
             {{ key }} <strong>{{ data[key].length }}</strong>
         </span>
     </div>
     <div class="tag-header">{{ selectTag }}</div>
-    <a :href="withBase(article.regularPath)" v-for="(article, index) in data[selectTag]" :key="index" class="posts">
+    <a
+        :href="withBase(article.regularPath)"
+        v-for="(article, index) in selectTag ? data[selectTag] : []"
+        :key="index"
+        class="posts"
+    >
         <div class="post-container">
             <div class="post-dot"></div>
             {{ article.frontMatter.title }}
@@ -17,6 +22,7 @@
 import { computed, ref } from 'vue'
 import { useData, withBase } from 'vitepress'
 import { initTags } from '../functions'
+
 let url = location.href.split('?')[1]
 let params = new URLSearchParams(url)
 const { theme } = useData()
@@ -33,6 +39,7 @@ const toggleTag = (tag: string) => {
     display: flex;
     flex-wrap: wrap;
 }
+
 .tag {
     display: inline-block;
     padding: 4px 16px;
@@ -45,9 +52,11 @@ const toggleTag = (tag: string) => {
     color: var(--vp-c-text-1);
     cursor: pointer;
 }
+
 .tag strong {
     color: var(--vp-c-brand);
 }
+
 .tag-header {
     font-size: 1.5rem;
     font-weight: 500;
@@ -59,6 +68,7 @@ const toggleTag = (tag: string) => {
     .tag-header {
         font-size: 1.5rem;
     }
+
     .date {
         font-size: 0.75rem;
     }

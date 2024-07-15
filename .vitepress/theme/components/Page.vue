@@ -23,11 +23,31 @@
 </template>
 
 <script lang="ts" setup>
+
 import { withBase } from 'vitepress'
-const props = defineProps({
-    posts: Array,
-    pageCurrent: Number,
-    pagesNum: Number
+import { PropType } from 'vue'
+interface Article {
+    regularPath: string
+    frontMatter: {
+        title: string
+        description: string
+        date: string
+        tags: string[]
+    }
+}
+defineProps({
+    posts: {
+        type: Array as PropType<Article[]>,
+        required: true
+    },
+    pageCurrent: {
+        type: Number as PropType<number>,
+        required: true
+    },
+    pagesNum: {
+        type: Number as PropType<number>,
+        required: true
+    }
 })
 </script>
 
