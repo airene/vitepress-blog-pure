@@ -19,7 +19,8 @@ vitepress 足够轻量，系统干净，博客主题这块又是空白，所以�
 **不打算维护的功能**
 -   广告 - 一般人用不上
 -   上一篇｜下一篇 - 博客文章本来没什么关联性，价值不大
-
+## 2024-07-15 项目更ts化
+有些文件从js变成ts了，about加了适合程序员的模板，有更新的化可能需要重新拷贝文件，保留自己的config.js里的信息，感谢[Albert26193](https://github.com/Albert26193)  
 ## 2024-04-15 增加分类功能
 升级方式请看 https://github.com/airene/vitepress-blog-pure/commit/bbd8fb3508de7490ed93c3a43545df4d5b5ce9b1  
 总结就是：增加两个文件，修改3个文件，和每一个文章需要在开头增加category信息
@@ -132,6 +133,8 @@ comment: {
 
 比如：  
 sidebar 使用 hackcss 的方式实现想要的效果
+
+[Albert26193](https://github.com/Albert26193) 第一个给本project 提pull request的人，虽然没直接合进来，还是感谢。
 
 ## License
 
