@@ -78,7 +78,7 @@ bump version
     "type": "module",
     "license": "ISC",
     "devDependencies": {
-        "vitepress": "^1.3.0",
+        "vitepress": "^1.3.2",
         "globby": "^14.0.2",
         "gray-matter": "^4.0.3",
         "fs-extra": "^11.2.0"
