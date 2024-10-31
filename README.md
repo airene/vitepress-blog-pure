@@ -13,39 +13,18 @@ vitepress 足够轻量，系统干净，博客主题这块又是空白，所以�
 **计划中的功能**
 -   [ ] 等 vitepress 本身稳定了，就做成 npm package 方式的 theme **keep going**
 -   [x] 搜索 - vitepress后来的版本天生本地搜索，对普通人来说比algolia好用，很省心
--   [x] 留言 基于 utteranc
+-   [x] 留言 基于 [utteranc](https://utteranc.es/)
 -   [x] 分页?!
 
 **不打算维护的功能**
 -   广告 - 一般人用不上
 -   上一篇｜下一篇 - 博客文章本来没什么关联性，价值不大
-## 2024-07-15 项目更ts化
-有些文件从js变成ts了，about加了适合程序员的模板，有更新的化可能需要重新拷贝文件，保留自己的config.js里的信息，感谢[Albert26193](https://github.com/Albert26193)  
-## 2024-04-15 增加分类功能
-升级方式请看 https://github.com/airene/vitepress-blog-pure/commit/bbd8fb3508de7490ed93c3a43545df4d5b5ce9b1  
-总结就是：增加两个文件，修改3个文件，和每一个文章需要在开头增加category信息
-## 2024-04-07 升级到正式版1.0.2 
-- 稍后会把albert的pull request的内容有价值的和进来
-- 计划把此"theme"做成npm可以直接install的theme
-## 2023-08-09 官方终于升到rc版了, yeah
-bump version
-
-## 2023-07-24 更新
-`# {{ $frontmatter.title }}`用这样的方式当模版会有本地搜索的问题(显示的还是这个tag)，如果用本地搜索，建议直接和title保持一致的内容
-## 2023-03-10 更新
-动态配置评论(utterances)的主题
-## 2022-12-31 更新
-适配到 1.0.0-alpha.34
-终于把globby升级到了大版本13，从12开始globby转到了esm，一直没升级，而且概念有点模糊，这次升一下。 现在js语法就更纯粹没有commonjs了
-**最近还会做主题升级，现在的总感觉不满意，有点不是简约，是纯简单了**
-### break change
-- package.json 文件需要增加一行 "type": "module",
-- globby版本大于12，最好按照文档中的经过验证的版本
-
+## changelog
+[changelog](./changelog.md)
 
 ## 使用方法
 
-**貌似目前 vitepress 主题机制还不成熟，可能是因为没到正式版，先用`copy`的方式使用**
+TODO: ~~貌似目前 vitepress 主题机制还不成熟，可能是因为没到正式版，先用`copy`的方式使用~~
 
 1.复制以下文件到你的项目根目录
 
@@ -78,7 +57,7 @@ bump version
     "type": "module",
     "license": "ISC",
     "devDependencies": {
-        "vitepress": "^1.4.1",
+        "vitepress": "^1.4.2",
         "globby": "^14.0.2",
         "gray-matter": "^4.0.3",
         "fs-extra": "^11.2.0"
@@ -100,7 +79,7 @@ tags:
     - macOS
 ---
 
-# {{ $frontmatter.title }}
+# .zsh_history历史记录优化  -- 用{{ $frontmatter.title }}会影响本地查询，可惜
 正文
 ```
 
@@ -110,7 +89,7 @@ tags:
 
 ## 评论
 
-目前评论的使用方式并不是很优，尝试了几种方式，基于现状也找不到更合适的方式了，这个也可能和 vitepress 的宗旨（并不是 vuepress 的下一代）或者还没到正式版有关系
+目前评论的使用方式并不是很优雅，尝试了几种方式，基于现状也找不到更合适的方式了，这个也可能和 vitepress 的宗旨（并不是 vuepress 的下一代）或者还没到正式版有关系
 
 使用方式是在想开评论的文章最后加一个 `<Comment />`
 
