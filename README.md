@@ -55,7 +55,7 @@ vitepress 足够轻量，系统干净，博客主题这块又是空白，所以�
     "type": "module",
     "license": "ISC",
     "devDependencies": {
-        "vitepress": "^1.4.2",
+        "vitepress": "^1.5.0",
         "globby": "^14.0.2",
         "gray-matter": "^4.0.3",
         "fs-extra": "^11.2.0"
