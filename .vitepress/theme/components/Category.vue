@@ -23,9 +23,10 @@ const data = computed(() => initCategory(theme.value.posts))
 
 <style scoped>
 .category {
-    padding: 14px 0 8px 0;
-    font-size: 1.25rem;
-    font-weight: 500;
+    padding: 28px 0 10px 0;
+    font-size: 1.375rem;
+    font-weight: 600;
+    color: var(--bt-theme-title);
     font-family: var(--date-font-family),serif;
 }
 </style>

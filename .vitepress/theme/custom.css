@@ -12,9 +12,11 @@
     --li-dot-color: var(--vp-c-brand);
     --date-color: var(--vp-c-text-2);
     --date-font-family: Georgia, sans-serif;
+    --bt-theme-title: #000;
 }
 .dark {
     --vp-c-brand: #3b82f6;
+    --bt-theme-title: #fff
 }
 
 
@@ -32,7 +34,16 @@
 .vp-doc p {
     font-size: 0.9375rem;
 }
-
+.title {
+    font-size: 1.5rem !important;
+    letter-spacing: 1px;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    font-family: Optima, sans-serif !important;
+}
+.title a {
+    color: var(--bt-theme-title)!important;
+}
 .content a[rel~='noreferrer']:link, a[rel~='noreferrer']:visited {
     color: var(--vp-c-brand);
     font-weight: 500 !important;
@@ -42,7 +53,7 @@
     color: #888;
 }
 h1 {
-    font-size: 1.5rem !important;
+    font-size: 1.375rem !important;
     font-weight: 500 !important;
     padding-top: 14px;
 }
@@ -157,7 +168,7 @@ h3 {
 }
 
 .post-container {
-    color: var(--vp-c-text-2);
+    color: var(--vp-c-text-1);
     font-size: 0.9375rem;
     font-weight: 400;
 }
