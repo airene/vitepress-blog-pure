@@ -31,6 +31,11 @@ let selectTag = ref(params.get('tag') ? params.get('tag') : '')
 const toggleTag = (tag: string) => {
     selectTag.value = tag
 }
+// choose the first key
+const defaultDisplayTag = Object.keys(data.value)[0]
+if (defaultDisplayTag) {
+    toggleTag(defaultDisplayTag)
+}
 </script>
 
 <style scoped>
