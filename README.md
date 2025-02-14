@@ -55,10 +55,10 @@ vitepress 足够轻量，系统干净，博客主题这块又是空白，所以�
     "type": "module",
     "license": "ISC",
     "devDependencies": {
-        "vitepress": "^1.6.1",
-        "globby": "^14.0.2",
+        "vitepress": "^1.6.3",
+        "globby": "^14.1.0",
         "gray-matter": "^4.0.3",
-        "fs-extra": "^11.2.0"
+        "fs-extra": "^11.3.0"
     }
 }
 ```
