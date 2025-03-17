@@ -9,29 +9,22 @@ type Post = {
     regularPath: string
 }
 
-export function initTags(post: Post[]) {
-    const data: any = {}
-    for (let index = 0; index < post.length; index++) {
-        const element = post[index]
-        const tags = element.frontMatter.tags
-        if (tags) {
-            tags.forEach((item) => {
-                if (data[item]) {
-                    data[item].push(element)
-                } else {
-                    data[item] = []
-                    data[item].push(element)
-                }
-            })
-        }
-    }
-    return data
+export function initTags(posts: Post[]): Record<string, Post[]> {
+    const data: Record<string, Post[]> = {}
+    posts.forEach((post) => {
+        post.frontMatter.tags?.forEach((tag) => {
+            data[tag] = data[tag] || []
+            data[tag].push(post)
+        })
+    })
+
+    return Object.fromEntries(Object.entries(data).sort(([, posts1], [, posts2]) => posts2.length - posts1.length))
 }
 
-export function initCategory(post: Post[]) {
-    const data: any = {}
-    for (let index = 0; index < post.length; index++) {
-        const element = post[index]
+export function initCategory(posts: Post[]) {
+    const data: Record<string, Post[]> = {}
+    for (let index = 0; index < posts.length; index++) {
+        const element = posts[index]
         const category = element.frontMatter.category
         if (category) {
             if (data[category]) {
@@ -46,7 +39,7 @@ export function initCategory(post: Post[]) {
 }
 
 export function useYearSort(post: Post[]) {
-    const data = []
+    const data: Post[][] = []
     let year = '0'
     let num = -1
     for (let index = 0; index < post.length; index++) {
@@ -57,7 +50,7 @@ export function useYearSort(post: Post[]) {
                 data[num].push(element)
             } else {
                 num++
-                data[num] = [] as any
+                data[num] = []
                 data[num].push(element)
                 year = y
             }
