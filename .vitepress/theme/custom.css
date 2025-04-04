@@ -60,7 +60,7 @@ h1 {
 h2 {
     font-size: 1.125rem !important;
     font-weight: 500 !important;
-    border-bottom: 1px solid var(--vp-c-divider-light);
+    border-bottom: 1px solid var(--vp-c-divider);
     border-top: none !important;
     margin: inherit !important;
 }

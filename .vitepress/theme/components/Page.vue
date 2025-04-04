@@ -53,7 +53,7 @@ defineProps({
 
 <style scoped>
 .post-list {
-    border-bottom: 1px dashed var(--vp-c-divider-light);
+    border-bottom: 1px dashed var(--vp-c-divider);
     padding: 14px 0 14px 0;
 }
 .post-header {
@@ -90,7 +90,7 @@ defineProps({
     display: inline-block;
     width: 26px;
     text-align: center;
-    border: 1px var(--vp-c-divider-light) solid;
+    border: 1px var(--vp-c-divider) solid;
     border-right: none;
     font-weight: 400;
     border-radius: 20px;
