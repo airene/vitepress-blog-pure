@@ -34,3 +34,5 @@ onMounted(() => {
     max-width: inherit !important;
 }
 </style>
+
+<!--老的评论功能，现在用新的取代了-->

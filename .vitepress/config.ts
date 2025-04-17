@@ -5,7 +5,7 @@ import { getPosts } from './theme/pagesBuild'
 const pageSize = 5
 
 export default defineConfig({
-    title: `MagicCode|芝麻开门`,
+    title: `MagicCode - 芝麻开门`,
     description: `Fisher's Blog. Learn to ask questions, good questions are more important than answers`,
     base: '/',
     //srcDir: ".vitrepress/pages",
