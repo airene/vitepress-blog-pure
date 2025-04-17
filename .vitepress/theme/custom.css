@@ -1,5 +1,5 @@
+@import url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.6.0/style.min.css');
 :root {
-
     --vp-c-brand: #2563eb !important;
     --vp-c-brand-light: var(--vp-c-brand);
     --vp-c-brand-lighter: var(--vp-c-brand);
@@ -13,12 +13,19 @@
     --date-color: var(--vp-c-text-2);
     --date-font-family: Georgia, sans-serif;
     --bt-theme-title: #000;
+
+    --vp-font-family-base:
+        'LXGW WenKai Lite', 'Inter var experimental', 'Inter var', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    --vp-font-family-mono:
+        'LXGW WenKai Mono Lite', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono',
+        'Courier New', monospace;
+    --vp-avator-border: #ffffff;
 }
 .dark {
     --vp-c-brand: #3b82f6;
-    --bt-theme-title: #fff
+    --bt-theme-title: #fff;
 }
-
 
 /* theme reset start */
 
@@ -35,16 +42,17 @@
     font-size: 0.9375rem;
 }
 .title {
-    font-size: 1.5rem !important;
+    font-size: 1.3rem !important;
     letter-spacing: 1px;
     font-weight: 600 !important;
-    text-transform: uppercase;
-    font-family: Optima, sans-serif !important;
+    /* text-transform: uppercase;
+    font-family: Optima, sans-serif !important; */
 }
 .title a {
-    color: var(--bt-theme-title)!important;
+    color: var(--bt-theme-title) !important;
 }
-.content a[rel~='noreferrer']:link, a[rel~='noreferrer']:visited {
+.content a[rel~='noreferrer']:link,
+a[rel~='noreferrer']:visited {
     color: var(--vp-c-brand);
     font-weight: 500 !important;
     border-bottom: 1px solid var(--vp-c-brand);
@@ -76,9 +84,9 @@ h3 {
 .VPDoc {
     padding-top: 10px !important;
 }
-.container {
+/* .container {
     max-width: 60rem !important;
-}
+} */
 .VPContent .container {
     max-width: 60rem !important;
     display: block !important;
@@ -88,7 +96,6 @@ h3 {
 .VPDoc.has-aside .content-container {
     max-width: 60rem !important;
 }
-
 
 @media (min-width: 768px) {
     .VPDoc {
@@ -122,7 +129,6 @@ h3 {
         display: block !important;
     }
 }
-
 
 /*mobile*/
 @media screen and (max-width: 768px) {
@@ -192,4 +198,3 @@ h3 {
     border-radius: 2px;
     color: var(--vp-c-text-1);
 }
-

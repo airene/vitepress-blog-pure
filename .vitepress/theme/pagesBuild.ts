@@ -28,6 +28,11 @@ async function generatePaginationPages(total: number, pageSize: number) {
     //  pagesNum
     let pagesNum = total % pageSize === 0 ? total / pageSize : Math.floor(total / pageSize) + 1
     const paths = resolve('./')
+
+    // const tempDir = resolve("./.vitepress/pages"); // VitePress专用目录
+    // await fs.ensureDir(tempDir); // 确保临时目录存在
+    // await fs.emptyDir(tempDir); // 清空旧文件（防止残留）
+
     if (total > 0) {
         for (let i = 1; i < pagesNum + 1; i++) {
             const page = `
@@ -43,13 +48,23 @@ const { theme } = useData();
 const posts = theme.value.posts.slice(${pageSize * (i - 1)},${pageSize * i})
 </script>
 <Page :posts="posts" :pageCurrent="${i}" :pagesNum="${pagesNum}" />
-`.trim()
+`.trim();
+
             const file = paths + `/page_${i}.md`
             await fs.writeFile(file, page)
+
+            // // 输出到临时目录
+            // const outputPath = resolve(tempDir, `page_${i}.md`);
+            // await fs.writeFile(outputPath, page);
         }
     }
     // rename page_1 to index for homepage
     await fs.move(paths + '/page_1.md', paths + '/index.md', { overwrite: true })
+
+    // // 处理首页重命名
+    // await fs.copy(resolve(tempDir, "page_1.md"), resolve(tempDir, "index.md"), {
+    //     overwrite: true,
+    // });
 }
 
 function _convertDate(date = new Date().toString()) {
@@ -57,8 +72,11 @@ function _convertDate(date = new Date().toString()) {
     return json_date.split('T')[0]
 }
 
-function _compareDate(obj1: { frontMatter: { date: number } }, obj2: { frontMatter: { date: number } }) {
-    return obj1.frontMatter.date < obj2.frontMatter.date ? 1 : -1
+function _compareDate(
+    obj1: { frontMatter: { date: number } },
+    obj2: { frontMatter: { date: number } }
+) {
+    return obj1.frontMatter.date < obj2.frontMatter.date ? 1 : -1;
 }
 
 export { getPosts }

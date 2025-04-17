@@ -1,32 +1,33 @@
 {
-  "name": "ti.bi",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "vitepress dev --host 0.0.0.0",
-    "build": "vitepress build",
-    "preview": "vitepress preview"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "module",
-  "devDependencies": {
-    "@types/node": "^22.14.0",
-    "@typescript-eslint/eslint-plugin": "^8.29.0",
-    "@typescript-eslint/parser": "^8.29.0",
-    "@typescript-eslint/types": "^8.29.0",
-    "@vue/compiler-sfc": "^3.5.13",
-    "eslint": "^9.23.0",
-    "eslint-config-prettier": "^10.1.1",
-    "eslint-plugin-prettier": "^5.2.6",
-    "eslint-plugin-vue": "^9.33.0",
-    "fs-extra": "^11.3.0",
-    "globby": "^14.1.0",
-    "gray-matter": "^4.0.3",
-    "prettier": "^3.5.3",
-    "typescript": "^5.8.2",
-    "vitepress": "^1.6.3"
-  }
+    "name": "aicronet-blog",
+    "version": "5.0.0",
+    "description": "",
+    "main": "index.js",
+    "author": "fisher <fisher@aicro.net>",
+    "keywords": [],
+    "license": "MIT",
+    "type": "module",
+    "scripts": {
+        "dev": "vitepress dev --host 0.0.0.0",
+        "build": "vitepress build",
+        "build2": "vitepress build .vitepress",
+        "preview": "vitepress preview"
+    },
+    "devDependencies": {
+        "@types/node": "^22.14.0",
+        "@typescript-eslint/eslint-plugin": "^8.29.0",
+        "@typescript-eslint/parser": "^8.29.0",
+        "@typescript-eslint/types": "^8.29.0",
+        "@vue/compiler-sfc": "^3.5.13",
+        "eslint": "^9.23.0",
+        "eslint-config-prettier": "^10.1.1",
+        "eslint-plugin-prettier": "^5.2.6",
+        "eslint-plugin-vue": "^9.33.0",
+        "fs-extra": "^11.3.0",
+        "globby": "^14.1.0",
+        "gray-matter": "^4.0.3",
+        "prettier": "^3.5.3",
+        "typescript": "^5.8.2",
+        "vitepress": "^1.6.3"
+    }
 }
