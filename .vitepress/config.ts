@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-import { getPosts } from './theme/pagesBuild'
+import { getPosts } from './theme/pageService'
 
 //每页的文章数量
 const pageSize = 5
@@ -17,13 +17,6 @@ export default defineConfig({
     themeConfig: {
         posts: await getPosts(pageSize),
         website: "https://github.com/FisherMS", //copyright link
-         // 评论的仓库地址
-         comment: {
-            repo: "FisherMS/vitepress-abcdeep-net-blog",
-            themes: "github-light",
-            issueTerm: "pathname",
-            crossorigin: "anonymous",
-        },
         nav: [
             { text: "🏡Home", link: "/" },
             { text: "📚 Category", link: "/pages/category" },

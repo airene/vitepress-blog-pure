@@ -1,6 +1,6 @@
 {
-    "name": "aicronet-blog",
-    "version": "5.0.0",
+    "name": "blog-aicro-net",
+    "version": "1.0.0",
     "description": "",
     "main": "index.js",
     "author": "fisher <fisher@aicro.net>",

@@ -11,7 +11,7 @@
 
   giscusTalk(
     {
-      repo: 'FisherMS/vitepress-abcdeep-net-blog', // 仓库名称
+      repo: 'FisherMS/blog-aicro-net', // 仓库名称
       repoId: 'R_kgDOOaU1KA', // 仓库 ID
       category: 'General', // 讨论分类名称
       categoryId: 'DIC_kwDOOaU1KM4CpMfW', // 讨论分类 ID
