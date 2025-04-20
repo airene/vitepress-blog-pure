@@ -15,6 +15,7 @@ export default defineConfig({
     //outDir: ".vitepress/pages", // 确保输出目录正确
     //cacheDir: ".vitepress/cache", //default value:.vitepress/cache
     themeConfig: {
+        logo: "/32.png",
         posts: await getPosts(pageSize),
         website: 'https://github.com/FisherMS', //copyright link
         // blogs page show firewokrs animation
