@@ -1,32 +1,36 @@
-# vitepress abcdeep.net blog
+# blog-aicro-net
 
-[Live Demo](https://blog.abcdeep.net)
+[Live Demo1](https://blog.aicro.net)
 
+[Live Demo2](https://blog.abcdeep.net)
 
 
 
 ## 动机
 
-好多年没有写Blog了，平时工作中的笔记到是写了不少。不过并没有Blog查看方便，因此使用了现有的[vitepress-blog-pure](https://github.com/airene/vitepress-blog-pure) 项目。
+好多年没有写Blog了。平时工作中的笔记到是写了不少，不过并没有Blog查看方便。
+
+使用了现有的[vitepress-blog-pure](https://github.com/airene/vitepress-blog-pure) 项目。
 
 来实现一个轻量级的Blog。方便写下平时的想法和一些经验心得。
+
 
 
 **计划中的功能**
 -   [ ] 等 vitepress 本身稳定了，就做成 npm package 方式的 theme **keep going**
 -   [x] 搜索 - vitepress后来的版本天生本地搜索，对普通人来说比algolia好用，很省心
--   [x] 留言 基于 [utteranc](https://utteranc.es/)
+-   [x] 留言 基于 [Giscus的评论系统](https://giscus.app/)
 -   [x] 分页?!
 
-**不打算维护的功能**
--   广告 - 一般人用不上
--   上一篇｜下一篇 - 博客文章本来没什么关联性，价值不大
+
+
 ## changelog
 [changelog](./changelog.md)
 
+
 ## 使用方法
 
-1.复制以下文件到你的项目根目录
+1. 复制以下文件到你的项目根目录
 
 ```
 ├── .vitepress
@@ -34,19 +38,20 @@
 │   ├── about.md
 │   ├── archives.md
 │   └── tags.md
-├── posts            //存放博客文章
+├── posts            //可以按目录分类存放博客文章
 ├── public           //[可选]
     └── favicon.ico
 ```
 
-2.新建一个 package.json 文件,执行 npm i,包信息自己看着调整
+
+2. 新建一个 package.json 文件,执行 npm i,包信息自己看着调整
 
 ```json
 {
-    "name": "vitepress-blog-pure",
-    "version": "1.1.0",
+    "name": "blog-aicro-net",
+    "version": "1.0.0",
     "description": "",
-    "main": "index.ts",
+    "main": "index.js",
     "scripts": {
         "dev": "vitepress dev --host 0.0.0.0",
         "build": "vitepress build",
@@ -65,9 +70,10 @@
 }
 ```
 
-3.执行 `npm run dev` 即可查看效果, 其他工具随意 pnpm,yarn 等
+3. 执行 `npm run dev` 即可查看效果, 其他工具随意 pnpm,yarn 等
 
 **ps. 写文章的格式和位置**  
+
 推荐放到 posts 目录中，格式：
 
 ```markdown
@@ -80,7 +86,9 @@ tags:
 ---
 
 # .zsh_history历史记录优化  -- 用{{ $frontmatter.title }}会影响本地查询，可惜
+
 正文
+
 ```
 
 
@@ -89,18 +97,27 @@ tags:
 
 ## 评论
 
-目前评论的使用方式并不是很优雅，尝试了几种方式，基于现状也找不到更合适的方式了，这个也可能和 vitepress 的宗旨（并不是 vuepress 的下一代）或者还没到正式版有关系
-
-使用方式是在想开评论的文章最后加一个 `<Comment />`
-
-`.vitepress/config.ts` 这个文件中的 comment 部分换成自己的仓库信息,才能正确的保存评论
+使用了[Giscus的评论系统](https://giscus.app/)(点击申请, 有中文)，修改文件：\.vitepress\theme\components\CommentGiscus.vue中对应的配置即可。
 
 ```js
-comment: {
-    repo: 'airene/vitepress-blog-pure', //你自己的用户名和仓库名
-    themes: 'github-light',
-    issueTerm: 'pathname'
-}
+giscusTalk(
+    {
+      repo: 'FisherMS/blog-aicro-net', // 仓库名称
+      repoId: 'R_kgDOOaU1KA', // 仓库 ID
+      category: 'General', // 讨论分类名称
+      categoryId: 'DIC_kwDOOaU1KM4CpMfW', // 讨论分类 ID
+      mapping: 'pathname',
+      inputPosition: 'top',
+      lang: 'en',
+      lightTheme: 'light',
+      darkTheme: 'transparent_dark'
+    },
+    {
+      frontmatter,
+      route
+    },
+    true
+  )
 ```
 
 ## 感谢
@@ -111,5 +128,5 @@ comment: {
 ## License
 
 [MIT](https://opensource.org/licenses/MIT)  
-Copyright (c) 2021-present, Fisher
+Copyright (c) 2025-present, Fisher
 
