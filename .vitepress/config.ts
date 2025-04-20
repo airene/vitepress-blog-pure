@@ -8,15 +8,26 @@ export default defineConfig({
     title: `MagicCode - 芝麻开门`,
     description: `Fisher's Blog. Learn to ask questions, good questions are more important than answers`,
     base: '/',
-    //srcDir: ".vitrepress/pages",
-    //outDir: ".vitepress/pages", // 确保输出目录正确
-    //cacheDir: ".vitepress/cache", //default value:.vitepress/cache
     ignoreDeadLinks: true,
     //lastUpdated: true,
     //cleanUrls: true,
+    //srcDir: ".vitrepress/pages",
+    //outDir: ".vitepress/pages", // 确保输出目录正确
+    //cacheDir: ".vitepress/cache", //default value:.vitepress/cache
     themeConfig: {
         posts: await getPosts(pageSize),
         website: 'https://github.com/FisherMS', //copyright link
+        // blogs page show firewokrs animation
+        showFireworksAnimation: true,
+        // outline: 2, //设置右侧aside显示层级
+        aside: true,
+        //outline:[2,3],
+        outline: {
+            label: '文章摘要'
+        },
+        search: {
+            provider: 'local'
+        },
         nav: [
             { text: '🏡Home', link: '/' },
             { text: '📚 Category', link: '/pages/category' },
@@ -25,9 +36,7 @@ export default defineConfig({
             { text: 'ℹ️About', link: '/pages/about' }
             // { text: 'Airene', link: 'http://airene.net' }  -- External link test
         ],
-        search: {
-            provider: 'local'
-        },
+
         socialLinks: [
             { icon: 'github', link: 'https://github.com/FisherMS' },
             { icon: 'twitter', link: 'https://x.com/AicroSupport' },
@@ -39,25 +48,11 @@ export default defineConfig({
                 },
                 link: 'mailto:fisher@aicro.net'
             }
-        ],
-        // outline: 2, //设置右侧aside显示层级
-        aside: true,
-        //outline:[2,3],
-        outline: {
-            label: '文章摘要'
-        },
-        // blogs page show firewokrs animation
-        showFireworksAnimation: true
+        ]
     } as any,
     srcExclude: ['README.md'], // exclude the README.md , needn't to compiler
-
     vite: {
         //build: { minify: false }
         server: { port: 5000 }
     }
-    /*
-      optimizeDeps: {
-          keepNames: true
-      }
-      */
 })

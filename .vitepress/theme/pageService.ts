@@ -1,7 +1,7 @@
 import { globby } from 'globby'
 import matter from 'gray-matter'
 import fs from 'fs-extra'
-import { resolve } from 'path'
+import { resolve, join } from 'path'
 
 async function getPosts(pageSize: number) {
     let paths = await globby(['posts/**/**.md'])
