@@ -8,7 +8,7 @@
                 >
             </div>
         </template>
-        <template #page-bottom>
+        <template #doc-bottom>
             <Comment />
         </template>
     </Layout>
