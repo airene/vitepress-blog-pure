@@ -5,7 +5,7 @@ import { getPosts } from './theme/pageService'
 const pageSize = 8
 
 export default defineConfig({
-    title: `MagicCode - 芝麻开门`,
+    title: `MagicCode`,
     description: `Fisher's Blog. Learn to ask questions, good questions are more important than answers`,
     base: '/',
     ignoreDeadLinks: true,
@@ -17,7 +17,8 @@ export default defineConfig({
     themeConfig: {
         logo: "/32.png",
         posts: await getPosts(pageSize),
-        website: 'https://github.com/FisherMS', //copyright link
+        copyrightUrl: 'https://github.com/FisherMS', //copyright link
+        copyrightName: `MagicCode - 芝麻开门`,
         // blogs page show firewokrs animation
         showFireworksAnimation: true,
         // outline: 2, //设置右侧aside显示层级

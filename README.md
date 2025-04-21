@@ -17,10 +17,7 @@
 
 
 **计划中的功能**
--   [ ] 等 vitepress 本身稳定了，就做成 npm package 方式的 theme **keep going**
--   [x] 搜索 - vitepress后来的版本天生本地搜索，对普通人来说比algolia好用，很省心
--   [x] 留言 基于 [Giscus的评论系统](https://giscus.app/)
--   [x] 分页?!
+-   [ ] 实现在posts目录中的某些子目录在Build的时候排除。
 
 
 
