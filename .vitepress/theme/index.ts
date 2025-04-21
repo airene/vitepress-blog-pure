@@ -6,14 +6,14 @@ import Category from './components/Category.vue'
 import Tags from './components/Tags.vue'
 import Page from './components/Page.vue'
 import Comment from './components/CommentGiscus.vue'
-import type { EnhanceAppContext } from 'vitepress'
+import { App } from 'vue' // 引入 Vue 的 App 类型
 
 import './custom.css'
 
 export default {
     ...DefaultTheme,
     Layout: NewLayout,
-    enhanceApp({ app }: EnhanceAppContext) {
+    enhanceApp({ app }: { app: App }) {
         // 全局注册后，在Vue里就能直接使用了
         app.component('Tags', Tags)
         app.component('Category', Category)
