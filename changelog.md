@@ -1,9 +1,7 @@
 # changelog
 
 
-这个tsconfig.json文件在vitepress项目里的作用是什么？内容的每一行写的是什么意思？
-
-## 2025-04-18
+## 2025-04-23
 - change project name: blog-aicro-net v1.0.0
 - /posts/下的文章按目录存放，而不必存放到Posts的根目录
 - 修改原有的评论模块为Giscus，因为原有的有不少问题
