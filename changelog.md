@@ -7,7 +7,7 @@
 - change project name: blog-aicro-net v1.0.0
 - /posts/下的文章按目录存放，而不必存放到Posts的根目录
 - 修改原有的评论模块为Giscus，因为原有的有不少问题
-- 
+- 发布时排除 `trash` `private-notes` `draft` 这三个目录的md文档。
 
 
 
