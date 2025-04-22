@@ -1,10 +1,18 @@
 import { globby } from 'globby'
 import matter from 'gray-matter'
 import fs from 'fs-extra'
-import { resolve } from 'path'
+import { resolve, join } from 'path'
 
 async function getPosts(pageSize: number) {
-    let paths = await globby(['posts/**/**.md'])
+    // 判断是否是构建模式
+    const isProd = process.env.NODE_ENV === 'production'
+    const ignorePaths = isProd ? ['posts/draft/**/*.md', 'posts/private-notes/**/*.md', 'posts/trash/**/*.md'] : []
+    //这里只是生成分页时才用到
+    let paths = await globby(['posts/**/**.md'], {
+        ignore: ignorePaths
+    })
+    console.log('paths', paths)
+    //return
 
     //生成分页页面markdown
     await generatePaginationPages(paths.length, pageSize)
@@ -28,6 +36,7 @@ async function generatePaginationPages(total: number, pageSize: number) {
     //  pagesNum
     let pagesNum = total % pageSize === 0 ? total / pageSize : Math.floor(total / pageSize) + 1
     const paths = resolve('./')
+
     if (total > 0) {
         for (let i = 1; i < pagesNum + 1; i++) {
             const page = `
@@ -44,6 +53,7 @@ const posts = theme.value.posts.slice(${pageSize * (i - 1)},${pageSize * i})
 </script>
 <Page :posts="posts" :pageCurrent="${i}" :pagesNum="${pagesNum}" />
 `.trim()
+
             const file = paths + `/page_${i}.md`
             await fs.writeFile(file, page)
         }

@@ -4,13 +4,15 @@
         "module": "esnext",
         "moduleResolution": "node",
         "strict": true,
+        "noImplicitAny": true,
         "jsx": "preserve",
         "sourceMap": true,
         "resolveJsonModule": true,
         "esModuleInterop": true,
         "skipLibCheck": true,
         "lib": ["ESNext", "DOM"],
-        "types": [],
+        //"types": [],
+        "types": ["vitepress/client"],
         "baseUrl": "./",
         "paths": {
             "@/*": ["src/*"]

@@ -5,6 +5,7 @@ const utterancesRef = ref()
 const { theme, isDark } = useData()
 onMounted(() => {
     nextTick(() => {
+        //通过theme.value.comment的配置取得
         let { repo, issueTerm = 'pathname' } = theme.value.comment
         if (repo) {
             let utterances = document.createElement('script')
@@ -34,3 +35,5 @@ onMounted(() => {
     max-width: inherit !important;
 }
 </style>
+
+<!--老的评论功能，现在用新的取代了-->

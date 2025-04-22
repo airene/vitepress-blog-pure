@@ -8,8 +8,10 @@
                 >
             </div>
         </template>
-        <template #doc-bottom>
-            <Comment />
+        <template #page-bottom>
+            <div style="margin-top: 20px; border-top: 1px solid #ddd; padding-top: 20px;">
+                <Comment /> <!-- 评论组件现在位于页面底部 -->
+            </div>
         </template>
     </Layout>
     <Copyright />

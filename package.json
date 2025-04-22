@@ -1,32 +1,36 @@
 {
-  "name": "ti.bi",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "vitepress dev --host 0.0.0.0",
-    "build": "vitepress build",
-    "preview": "vitepress preview"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "module",
-  "devDependencies": {
-    "@types/node": "^22.14.1",
-    "@typescript-eslint/eslint-plugin": "^8.30.1",
-    "@typescript-eslint/parser": "^8.30.1",
-    "@typescript-eslint/types": "^8.30.1",
-    "@vue/compiler-sfc": "^3.5.13",
-    "eslint": "^9.24.0",
-    "eslint-config-prettier": "^10.1.2",
-    "eslint-plugin-prettier": "^5.2.6",
-    "eslint-plugin-vue": "^9.33.0",
-    "fs-extra": "^11.3.0",
-    "globby": "^14.1.0",
-    "gray-matter": "^4.0.3",
-    "prettier": "^3.5.3",
-    "typescript": "^5.8.3",
-    "vitepress": "^1.6.3"
-  }
+    "name": "blog-aicro-net",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "author": "fisher <fisher@aicro.net>",
+    "keywords": [],
+    "license": "MIT",
+    "type": "module",
+    "scripts": {
+        "dev": "vitepress dev --host 0.0.0.0",
+        "build": "vitepress build",
+        "prod": "cross-env NODE_ENV=production vitepress build",
+        "preview": "cross-env NODE_ENV=production vitepress preview"
+    },
+    "devDependencies": {
+        "@types/fs-extra": "^11.0.4",
+        "@types/node": "^22.14.0",
+        "@typescript-eslint/eslint-plugin": "^8.29.0",
+        "@typescript-eslint/parser": "^8.29.0",
+        "@typescript-eslint/types": "^8.29.0",
+        "@vue/compiler-sfc": "^3.5.13",
+        "cross-env": "^7.0.3",
+        "eslint": "^9.23.0",
+        "eslint-config-prettier": "^10.1.1",
+        "eslint-plugin-prettier": "^5.2.6",
+        "eslint-plugin-vue": "^9.33.0",
+        "fs-extra": "^11.3.0",
+        "globby": "^14.1.0",
+        "gray-matter": "^4.0.3",
+        "prettier": "^3.5.3",
+        "typescript": "^5.8.2",
+        "vitepress": "^1.6.3",
+        "vitepress-plugin-comment-with-giscus": "^1.1.15"
+    }
 }
