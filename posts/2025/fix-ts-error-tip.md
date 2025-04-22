@@ -1,3 +1,12 @@
+---
+title: 2022 Annual Summary
+description: 2022 Annual Summary
+date: 2023-04-19
+tags:
+  - English
+---
+
+
 这些问题是 TypeScript 类型检查的问题，可以通过以下方式进行修复：
 
 ---

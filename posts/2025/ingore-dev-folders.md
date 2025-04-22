@@ -1,3 +1,12 @@
+---
+title: 2022 Annual Summary
+description: 2022 Annual Summary
+date: 2023-04-19
+tags:
+  - English
+---
+
+
 为了实现这个功能，你需要在 `getPosts` 函数中动态处理 `posts` 文件夹中的内容。具体来说：
 
 1. **在开发模式下** (`npm run dev`) 加载所有 Markdown 文件。
