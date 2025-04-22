@@ -5,9 +5,12 @@ import { resolve, join } from 'path'
 
 async function getPosts(pageSize: number) {
     // 判断是否是构建模式
-    const isBuild = process.env.NODE_ENV === 'production'
-
-    let paths = await globby(['posts/**/**.md'], { ignore: ['posts/trash/**/*.md'] })
+    const isProd = process.env.NODE_ENV === 'production'
+    const ignorePaths = isProd ? ['posts/draft/**/*.md', 'posts/private-notes/**/*.md', 'posts/trash/**/*.md'] : []
+    //这里只是生成分页时才用到
+    let paths = await globby(['posts/**/**.md'], {
+        ignore: ignorePaths
+    })
     console.log('paths', paths)
     //return
 

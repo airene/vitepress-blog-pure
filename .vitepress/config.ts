@@ -4,6 +4,10 @@ import { getPosts } from './theme/pageService'
 //每页的文章数量
 const pageSize = 8
 
+// 判断是否是构建模式,NOTE：npm run build也是production模式。
+const isProd = process.env.NODE_ENV === 'production'
+console.log('isProd', isProd)
+
 export default defineConfig({
     title: `MagicCode`,
     description: `Fisher's Blog. Learn to ask questions, good questions are more important than answers`,
@@ -14,8 +18,21 @@ export default defineConfig({
     //srcDir: ".vitrepress/pages",
     //outDir: ".vitepress/pages", // 确保输出目录正确
     //cacheDir: ".vitepress/cache", //default value:.vitepress/cache
+    // 动态设置 srcExclude : exclude the README.md , needn't to compiler
+    srcExclude: isProd
+        ? [
+              '**/trash/**/*.md', // 排除所有 trash 目录
+              '**/draft/**/*.md', // 递归排除子目录
+              '**/private-notes/*.md', // 排除特定文件
+              'README.md'
+          ]
+        : ['README.md'],
+    vite: {
+        //build: { minify: false }
+        server: { port: 5000 }
+    },
     themeConfig: {
-        logo: "/assets/logo/32.png",
+        logo: '/assets/logo/32.png',
         posts: await getPosts(pageSize),
         copyrightUrl: 'https://github.com/FisherMS', //copyright link
         copyrightName: `blog-aicro-net`,
@@ -51,10 +68,5 @@ export default defineConfig({
                 link: 'mailto:fisher@aicro.net'
             }
         ]
-    } as any,
-    srcExclude: ['README.md'], // exclude the README.md , needn't to compiler
-    vite: {
-        //build: { minify: false }
-        server: { port: 5000 }
-    }
+    } as any
 })
