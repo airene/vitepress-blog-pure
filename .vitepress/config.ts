@@ -15,10 +15,10 @@ export default defineConfig({
     //outDir: ".vitepress/pages", // 确保输出目录正确
     //cacheDir: ".vitepress/cache", //default value:.vitepress/cache
     themeConfig: {
-        logo: "/32.png",
+        logo: "/assets/logo/32.png",
         posts: await getPosts(pageSize),
         copyrightUrl: 'https://github.com/FisherMS', //copyright link
-        copyrightName: `MagicCode - 芝麻开门`,
+        copyrightName: `blog-aicro-net`,
         // blogs page show firewokrs animation
         showFireworksAnimation: true,
         // outline: 2, //设置右侧aside显示层级

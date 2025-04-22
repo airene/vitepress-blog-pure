@@ -11,7 +11,7 @@
         "dev": "vitepress dev --host 0.0.0.0",
         "build": "vitepress build",
         "prod": "cross-env NODE_ENV=production vitepress build",
-        "preview": "vitepress preview"
+        "preview": "cross-env NODE_ENV=production vitepress preview"
     },
     "devDependencies": {
         "@types/fs-extra": "^11.0.4",

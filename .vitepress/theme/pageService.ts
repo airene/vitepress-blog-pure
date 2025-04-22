@@ -4,7 +4,12 @@ import fs from 'fs-extra'
 import { resolve, join } from 'path'
 
 async function getPosts(pageSize: number) {
-    let paths = await globby(['posts/**/**.md'])
+    // 判断是否是构建模式
+    const isBuild = process.env.NODE_ENV === 'production'
+
+    let paths = await globby(['posts/**/**.md'], { ignore: ['posts/trash/**/*.md'] })
+    console.log('paths', paths)
+    //return
 
     //生成分页页面markdown
     await generatePaginationPages(paths.length, pageSize)
