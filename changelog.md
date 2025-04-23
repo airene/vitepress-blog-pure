@@ -1,4 +1,9 @@
 # changelog
+
+## 2025-04-23
+- /posts/下的文章按目录存放，而不必存放到Posts的根目录
+- 发布时排除 `trash` `private-notes` `draft` 这三个目录的md文档。
+
 ## 2025-03-17 标签 tags页面
 tag最多的内容排在最前面
 ## 2024-07-15 项目更ts化

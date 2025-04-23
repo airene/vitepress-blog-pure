@@ -4,6 +4,8 @@ import { getPosts } from './theme/serverUtils'
 //每页的文章数量
 const pageSize = 10
 
+const isProd = process.env.NODE_ENV === 'production'
+
 export default defineConfig({
     title: 'Vitepress blog',
     base: '/',
@@ -36,8 +38,15 @@ export default defineConfig({
         },
         socialLinks: [{ icon: 'github', link: 'https://github.com/airene/vitepress-blog-pure' }]
     } as any,
-    srcExclude: ['README.md'], // exclude the README.md , needn't to compiler
 
+    srcExclude: isProd
+    ? [
+          '**/trash/**/*.md', // 排除所有 trash 目录
+          '**/draft/**/*.md', // 递归排除子目录
+          '**/private-notes/*.md', // 排除特定文件
+          'README.md'
+      ]
+    : ['README.md'],
     vite: {
         //build: { minify: false }
         server: { port: 5000 }
