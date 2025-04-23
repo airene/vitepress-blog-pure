@@ -8,7 +8,7 @@ const isProd = process.env.NODE_ENV === 'production'
 
 export default defineConfig({
     title: 'Vitepress blog',
-    base: '/',
+    base: '/vitepress-blog-pure/',
     cacheDir: './node_modules/vitepress_cache',
     description: 'vitepress,blog,blog-theme',
     ignoreDeadLinks: true,
