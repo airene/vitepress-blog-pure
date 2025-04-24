@@ -29,6 +29,7 @@
     "gray-matter": "^4.0.3",
     "prettier": "^3.5.3",
     "typescript": "^5.8.3",
-    "vitepress": "^1.6.3"
+    "vitepress": "^1.6.3",
+    "vitepress-plugin-comment-with-giscus": "^1.1.15"
   }
 }
