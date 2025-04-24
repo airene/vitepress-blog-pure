@@ -1,7 +1,7 @@
 # changelog
 
 ## 2025-04-24
-- 修改原有的评论模块为Giscus，因为原有的有不少问题，新的安装地址：https://giscus.app/
+- 修改原有的评论模块为Giscus，因为原有的有不少问题，新的安装地址：https://giscus.app/ 请按照giscus官网的指导操作更换`.vitepress/theme/components/CommentGiscus.vue`中的信息
 
 ## 2025-04-23
 - /posts/下的文章按目录存放，而不必存放到Posts的根目录

@@ -11,10 +11,10 @@
 
   giscusTalk(
     {
-      repo: 'FisherMS/blog-aicro-net', // 仓库名称
-      repoId: 'R_kgDOOeMx5A', // 仓库 ID
+      repo: 'airene/vitepress-blog-pure', // 仓库名称
+      repoId: 'MDEwOlJlcG9zaXRvcnkzODIyMjY5Nzg=', // 仓库 ID
       category: 'General', // 讨论分类名称
-      categoryId: 'DIC_kwDOOeMx5M4CpXx8', // 讨论分类 ID
+      categoryId: 'DIC_kwDOFshSIs4CpZga', // 讨论分类 ID
       mapping: 'pathname',
       inputPosition: 'top',
       lang: 'en',
