@@ -95,7 +95,9 @@ tags:
 比如：  
 sidebar 使用 hackcss 的方式实现想要的效果
 
-[Albert26193](https://github.com/Albert26193) 第一个给本project 提pull request的人，虽然没直接合进来，还是感谢。
+[Albert26193](https://github.com/Albert26193) 第一个给本project 提pull request的人，虽然没直接合进来，还是感谢。  
+[InsHomePgup](https://github.com/InsHomePgup)  
+[FisherMS](https://github.com/FisherMS)  
 
 ## License
 
