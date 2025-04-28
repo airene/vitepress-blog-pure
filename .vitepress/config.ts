@@ -15,11 +15,11 @@ export default defineConfig({
     themeConfig: {
         posts: await getPosts(pageSize),
         website: 'https://github.com/airene/vitepress-blog-pure', //copyright link
-        // 评论的仓库地址
+        // 评论的仓库地址 https://giscus.app/ 请按照这个官方初始化后覆盖
         comment: {
             repo: 'airene/vitepress-blog-pure',
-            themes: 'github-light',
-            issueTerm: 'pathname'
+            repoId: 'MDEwOlJlcG9zaXRvcnkzODIyMjY5Nzg',
+            categoryId: 'DIC_kwDOFshSIs4CpZga'
         },
         nav: [
             { text: 'Home', link: '/' },
@@ -30,23 +30,23 @@ export default defineConfig({
             // { text: 'Airene', link: 'http://airene.net' }  -- External link test
         ],
         search: {
-            provider: 'local',
+            provider: 'local'
         },
         //outline:[2,3],
-        outline:{
-            label:'文章摘要'
+        outline: {
+            label: '文章摘要'
         },
         socialLinks: [{ icon: 'github', link: 'https://github.com/airene/vitepress-blog-pure' }]
     } as any,
 
     srcExclude: isProd
-    ? [
-          '**/trash/**/*.md', // 排除所有 trash 目录
-          '**/draft/**/*.md', // 递归排除子目录
-          '**/private-notes/*.md', // 排除特定文件
-          'README.md'
-      ]
-    : ['README.md'],
+        ? [
+              '**/trash/**/*.md', // 排除所有 trash 目录
+              '**/draft/**/*.md', // 递归排除子目录
+              '**/private-notes/*.md', // 排除特定文件
+              'README.md'
+          ]
+        : ['README.md'],
     vite: {
         //build: { minify: false }
         server: { port: 5000 }
