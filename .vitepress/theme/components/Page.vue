@@ -2,6 +2,7 @@
     <div v-for="(article, index) in posts" :key="index" class="post-list">
         <div class="post-header">
             <div class="post-title">
+                {{ article.frontMatter.order > 0 ? '📌' : '' }}
                 <a :href="withBase(article.regularPath)"> {{ article.frontMatter.title }}</a>
             </div>
         </div>
@@ -11,31 +12,37 @@
         </div>
     </div>
 
-    <div class="pagination">
-        <a
-            class="link"
-            :class="{ active: pageCurrent === i }"
-            v-for="i in pagesNum"
-            :key="i"
-            :href="withBase(i === 1 ? '/index.html' : `/page_${i}.html`)"
-        >{{ i }}</a>
+    <div class="pagination" v-if="pagesNum > 1">
+        <span v-for="(item, index) in pageArray" :key="index" :class="['link', { active: item === pageCurrent }]">
+            <template v-if="item === '...'"> ... </template>
+            <template v-else-if="item === pageCurrent">
+                {{ item }}
+            </template>
+            <template v-else>
+                <a :href="withBase(item === 1 ? '/index.html' : `/page_${item}.html`)">
+                    {{ item }}
+                </a>
+            </template>
+        </span>
     </div>
 </template>
 
 <script lang="ts" setup>
 
 import { withBase } from 'vitepress'
-import { PropType } from 'vue'
+import { PropType, computed } from 'vue'
+import { generatePaginationArray } from '../pagination'
 interface Article {
     regularPath: string
     frontMatter: {
+        order: number
         title: string
         description: string
         date: string
         tags: string[]
     }
 }
-defineProps({
+const props = defineProps({
     posts: {
         type: Array as PropType<Article[]>,
         required: true
@@ -48,6 +55,10 @@ defineProps({
         type: Number as PropType<number>,
         required: true
     }
+})
+
+const pageArray = computed(() => {
+    return generatePaginationArray(props.pagesNum, props.pageCurrent)
 })
 </script>
 

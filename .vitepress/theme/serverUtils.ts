@@ -18,9 +18,14 @@ async function getPosts(pageSize: number) {
         paths.map(async (item) => {
             const content = await fs.readFile(item, 'utf-8')
             const { data } = matter(content)
-            data.date = _convertDate(data.date)
             return {
-                frontMatter: data,
+                frontMatter: {
+                    ...data,
+                    // 处理日期：无效日期回退当前时间
+                    date: _convertDate(data.date),
+                    // 处理 order：非数值时强制转换为 0
+                    order: _convertOrder(data.order)
+                },
                 regularPath: `/${item.replace('.md', '.html')}`
             }
         })
@@ -65,8 +70,20 @@ function _convertDate(date = new Date().toString()) {
     return json_date.split('T')[0]
 }
 
-function _compareDate(obj1: { frontMatter: { date: number } }, obj2: { frontMatter: { date: number } }) {
+function _compareDate(
+    obj1: { frontMatter: { date: number; order: number } },
+    obj2: { frontMatter: { date: number; order: number } }
+) {
+    const orderCompare = obj2.frontMatter.order - obj1.frontMatter.order
+    if (orderCompare !== 0) return orderCompare
     return obj1.frontMatter.date < obj2.frontMatter.date ? 1 : -1
+}
+
+function _convertOrder(input?: unknown): number {
+    if (input === undefined || input === null) return 0
+    if (typeof input === 'number') return input
+    const num = Number(input)
+    return isNaN(num) ? 0 : num
 }
 
 export { getPosts }
