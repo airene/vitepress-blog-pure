@@ -11,7 +11,7 @@ comment: true
 ---
 
 -   👋 Hi, I'm [ your name ]
--   🚀️ I'm currently working as [ your position ]
+-   🚀️ I'm currently working in [ your position ]
 -   📮️ How to reach me: [your Github](https://github.com)
 -   📖 My motto: [ your motto ]
 
