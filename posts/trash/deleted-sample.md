@@ -1,7 +1,7 @@
 ---
 title: 这是一个被删除的示例
 description: 这是一个被删除的示例
-date: 2025-04-23
+date: 2025-04-28 00:00
 tags:
   - sample
 ---
