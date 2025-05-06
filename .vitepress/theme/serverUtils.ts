@@ -2,6 +2,7 @@ import { globby } from 'globby'
 import matter from 'gray-matter'
 import fs from 'fs-extra'
 import { resolve, join } from 'path'
+import { convertDateV2 } from './date'
 
 async function getPosts(pageSize: number) {
     const isProd = process.env.NODE_ENV === 'production'
@@ -21,8 +22,7 @@ async function getPosts(pageSize: number) {
             return {
                 frontMatter: {
                     ...data,
-                    // 处理日期：无效日期回退当前时间
-                    date: _convertDate(data.date),
+                    date: convertDateV2(data.date),
                     // 处理 order：非数值时强制转换为 0
                     order: _convertOrder(data.order)
                 },
@@ -63,11 +63,6 @@ const posts = theme.value.posts.slice(${pageSize * (i - 1)},${pageSize * i})
     }
     // rename page_1 to index for homepage
     await fs.move(paths + '/page_1.md', paths + '/index.md', { overwrite: true })
-}
-
-function _convertDate(date = new Date().toString()) {
-    const json_date = new Date(date).toJSON()
-    return json_date.split('T')[0]
 }
 
 function _compareDate(
