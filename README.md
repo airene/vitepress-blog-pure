@@ -86,6 +86,12 @@ tags:
 
 **其中 title 为必须有的内容，其他随意，推荐含有 date,不然会默认一个当前时间，推荐含有 tags，这样也可以在标签页面显示**
 
+## 部署
+
+[![Deploy to Wasmer](https://img.shields.io/badge/Deploy%20to-Wasmer-171717?logo=wasmer&logoColor=white)](https://wasmer.io/apps/create?github=airene%2Fvitepress-blog-pure)
+
+上面的按钮会把本仓库导入 Wasmer Edge 创建应用。本项目的构建命令为 `bun run build`，静态文件输出目录为 `.vitepress/dist`。导入不会把仓库复制到你的 GitHub 账号，想自定义内容或推送后自动重新部署，请先 fork 本仓库，再导入你自己的仓库。部署前记得修改 `.vitepress/config.ts` 中的站点名称、`website`、`socialLinks` 和 giscus 评论仓库信息（默认指向本仓库）。
+
 ## 感谢
 
 其实没怎么写过 nodejs,从掘金看到的一篇文章带来的灵感 - [VitePress 极简博客搭建](https://juejin.cn/post/6896382276389732359)
