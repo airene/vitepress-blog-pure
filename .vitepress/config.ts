@@ -43,7 +43,7 @@ export default defineConfig({
         ? [
               '**/trash/**/*.md', // 排除所有 trash 目录
               '**/draft/**/*.md', // 递归排除子目录
-              '**/private-notes/*.md', // 排除特定文件
+              '**/private-notes/**/*.md', // 排除 private-notes 下所有层级的文件
               'README.md'
           ]
         : ['README.md'],
