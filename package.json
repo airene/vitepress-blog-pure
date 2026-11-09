@@ -18,7 +18,7 @@
         "@typescript-eslint/eslint-plugin": "^8.72.1",
         "@typescript-eslint/parser": "^8.72.1",
         "@typescript-eslint/types": "^8.72.1",
-        "@vue/compiler-sfc": "^3.5.44",
+        "@vue/compiler-sfc": "^3.5.45",
         "cross-env": "^10.1.0",
         "esbuild": "^0.28.2",
         "eslint": "^10.14.0",
@@ -31,7 +31,7 @@
         "prettier": "^3.9.10",
         "typescript": "^6.0.3",
         "vitepress": "^1.6.4",
-        "vite": "^8.3.5",
+        "vite": "^8.3.6",
         "vitepress-plugin-comment-with-giscus": "^1.1.15"
     }
 }
